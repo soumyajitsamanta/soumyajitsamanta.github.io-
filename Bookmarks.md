@@ -3,6 +3,52 @@ It contains all bookmarks and other documents.
 
 As long as the number of links are small there will be a single table to take care of all links.
 
+- [About](#about)
+- [Notes](#notes)
+- [Links](#links)
+  - [References for Research 📚](#references-for-research-)
+  - [Interesting Github Repositories](#interesting-github-repositories)
+  - [Interesting Reads](#interesting-reads)
+  - [Security:](#security)
+  - [Productivity](#productivity)
+  - [Data And Statistics:](#data-and-statistics)
+  - [Study Help](#study-help)
+  - [Video Effects and Editing](#video-effects-and-editing)
+  - [Tools](#tools)
+    - [Text Tools](#text-tools)
+    - [Design Tools](#design-tools)
+  - [Coordinates Of Cruptocurrency World](#coordinates-of-cruptocurrency-world)
+    - [Betting In Crypto](#betting-in-crypto)
+    - [Virtual Credit Cards Funded by Crypto](#virtual-credit-cards-funded-by-crypto)
+    - [Defi](#defi)
+    - [Testnet Faucets:](#testnet-faucets)
+- [Books](#books)
+
+# Notes
+
+Icons can be added via following methods:
+- Markdown image inclusion using !\[]\()
+- Using the img tags \<img src="">\</img>
+- Using emohis where they are suitable and present
+
+# Links
+
+## References for Research 📚
+
+[ProQuest](https://www.proquest.com)
+
+[EBSCO](https://www.ebsco.com)
+
+[Statista](https://www.statista.com)
+
+![Elsevier](https://img.shields.io/badge/--white?logo=elsevier)
+[Elsevier](https://www.elsevier.com/en-in)
+
+[Directory of Open Access Journals](https://www.doabooks.org/)
+
+[Open Research Library](https://openresearchlibrary.org/home)
+
+
 ## Interesting Github Repositories
 
 [Awesome Sysadmin](https://github.com/awesome-foss/awesome-sysadmin)
@@ -114,9 +160,12 @@ Displays the fonts being used in a design.
 
 [Dexsport](https://mainnet.dexsport.io/sports)
 Decentralized betting site.
+
 [BC.game](https://bc.game/)
 Good betting site.
+
 [Betonline](https://www.betonline.ag/)
+
 [Bitcasino](https://bitcasino.io/)
 
 
