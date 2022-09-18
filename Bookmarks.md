@@ -6,7 +6,8 @@ As long as the number of links are small there will be a single table to take ca
 - [About](#about)
 - [Notes](#notes)
 - [Links](#links)
-  - [References for Research 📚](#references-for-research-)
+  - [Decentralized Technologies:](#decentralized-technologies)
+  - [References for Research 📚:](#references-for-research-)
   - [Interesting Github Repositories](#interesting-github-repositories)
   - [Interesting Reads](#interesting-reads)
   - [Security:](#security)
@@ -26,16 +27,23 @@ As long as the number of links are small there will be a single table to take ca
 
 # Notes
 
-Icons can be added via following methods:
+Icons can be added via following methods in order of preference:
 - Markdown image inclusion using !\[]\()
-- Using the img tags \<img src="">\</img>
+- Using the img tags \<img src="" width="" height="">\</img>
 - Using emohis where they are suitable and present
 
 # Links
 
-## References for Research 📚
+## Decentralized Technologies:
 
-[ProQuest](https://www.proquest.com)
+> Note: This is different from cryptocurrency technologies in that these are lower level apis to create/work with decentralized technology and not a crypto node, coin, network or wallet.
+
+[Awesome IPFS](https://awesome.ipfs.tech)
+Links to various IPFS hosted sites or other tools related to IPFS.
+
+## References for Research 📚:
+
+[ProQuest](https://www.pUroquest.com)
 
 [EBSCO](https://www.ebsco.com)
 
