@@ -30,7 +30,7 @@ As long as the number of links are small there will be a single table to take ca
 Icons can be added via following methods in order of preference:
 - Markdown image inclusion using !\[]\()
 - Using the img tags \<img src="" width="" height="">\</img>
-- Using emohis where they are suitable and present
+- Using emojis where they are suitable and present
 
 # Links
 
@@ -148,6 +148,16 @@ A browser for bitcoin network stored data
 [Godbolt](www.godbolt.org)
 [Dogbolt](www.dogbolt.org)
 These are online compiler and decompiler explorer.
+
+[Good First Issues](https://goodfirstissues.com)
+Lists repositories which have help wanted or good first issue tag in issues,
+meaning beginner friendly issues.
+
+[Good first issues](https://goodfirstissue.dev)
+Same as above but different list and ui.
+
+[First Timers](www.firsttimersonly.com)
+A site aggregate links related toopen source contribution.
 
 ### Text Tools
 
