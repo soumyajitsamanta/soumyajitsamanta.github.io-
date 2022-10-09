@@ -24,6 +24,7 @@ As long as the number of links are small there will be a single table to take ca
     - [Defi](#defi)
     - [Testnet Faucets:](#testnet-faucets)
 - [Books](#books)
+- [Disclaimer](#disclaimer)
 
 # Notes
 
@@ -43,19 +44,27 @@ Links to various IPFS hosted sites or other tools related to IPFS.
 
 ## References for Research 📚:
 
-[ProQuest](https://www.pUroquest.com)
+[ProQuest](https://www.proquest.com)
 
 [EBSCO](https://www.ebsco.com)
 
 [Statista](https://www.statista.com)
 
-![Elsevier](https://img.shields.io/badge/--white?logo=elsevier)
+
 [Elsevier](https://www.elsevier.com/en-in)
 
 [Directory of Open Access Journals](https://www.doabooks.org/)
 
 [Open Research Library](https://openresearchlibrary.org/home)
 
+[Similarweb](https://www.similarweb.com/)
+Similarweb helps check and analyze web traffic for sites. Also see what the digital marketing efforts are by company. 
+#digitalmarketing #marketing-research
+
+[Macrotrends](https://www.macrotrends.net)
+Contains the data for many companies sourced from their earnings
+and investor relations documents and stores in one place shown in graphs.
+#financial-data #investor-relations
 
 ## Interesting Github Repositories
 
@@ -64,6 +73,9 @@ Awesome Sysadmin tools
 
 [Awesome - Github topic](https://github.com/topics/awesome)
 The Github topic collecting all the awesome links pages at one place
+
+[Awesome Page Links](https://github.com/sindresorhus/awesome)
+Awesome Page Links to more Awesome Pages
 
 [OpenTomb](https://github.com/opentomb/OpenTomb)
 OpenTomb game engine for Tomb Raider 1-5
@@ -236,3 +248,7 @@ Faucets also mentioned on Ethereum official websites (https://ethereum.org/en/de
 - [Working effectively with legacy code](https://www.goodreads.com/en/book/show/44919.Working_Effectively_with_Legacy_Code)
 - [Freakonomics](https://www.goodreads.com/book/show/1202.Freakonomics)
 - [A Data-Centric Introduction to Computing](https://dcic-world.org)
+
+# Disclaimer
+
+All logos, brands & tags are copyrights of respective sites or respective owners. 
