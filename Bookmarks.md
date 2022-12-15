@@ -97,6 +97,9 @@ Antlr tutorial in full depth from beginning.
 [Makefile Tutorial By Example](https://makefiletutorial.com)
 Teaches making makefile from simple start. No prerequisite.
 
+[Devblogs](https://devblogs.co/?dark=1)
+Stream of engineering blogs from top companies aggregated at one place.
+
 ## Security:
 
 [Breached Forums](https://breached.to/)
@@ -173,6 +176,9 @@ Same as above but different list and ui.
 
 [First Timers](www.firsttimersonly.com)
 A site aggregate links related toopen source contribution.
+
+[Overture](https://overturemaps.org/)
+For developers to get accurate maps for gesospatial data.
 
 ### Text Tools
 
