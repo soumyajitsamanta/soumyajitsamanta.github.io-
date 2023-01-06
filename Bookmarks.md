@@ -35,6 +35,11 @@ Icons can be added via following methods in order of preference:
 
 # Links
 
+## Hosting Services
+
+[OMG.lol](https://home.omg.lol/)
+Hosting provider for eTLD with great sales pitch and services and explanation.
+
 ## Decentralized Technologies:
 
 > Note: This is different from cryptocurrency technologies in that these are lower level apis to create/work with decentralized technology and not a crypto node, coin, network or wallet.
@@ -179,6 +184,9 @@ A site aggregate links related toopen source contribution.
 
 [Overture](https://overturemaps.org/)
 For developers to get accurate maps for gesospatial data.
+
+[Megalinter](https://megalinter.io/latest/)
+Linter for lota of languages and files. Looks promising.
 
 ### Text Tools
 
