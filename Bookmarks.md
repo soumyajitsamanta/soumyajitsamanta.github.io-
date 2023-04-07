@@ -63,13 +63,25 @@ Links to various IPFS hosted sites or other tools related to IPFS.
 [Open Research Library](https://openresearchlibrary.org/home)
 
 [Similarweb](https://www.similarweb.com/)
-Similarweb helps check and analyze web traffic for sites. Also see what the digital marketing efforts are by company. 
+Similarweb helps check and analyze web traffic for sites.
+Also see what the digital marketing efforts are by company. 
 #digitalmarketing #marketing-research
 
 [Macrotrends](https://www.macrotrends.net)
 Contains the data for many companies sourced from their earnings
 and investor relations documents and stores in one place shown in graphs.
 #financial-data #investor-relations
+
+[Interpack](https://www.interpack.com/)
+Its a conference on the packaging industry suppliers and consumers.
+
+[GlobalSources](https://www.globalsources.com)
+GlobalSources contains the things suppliers will supply and quantity listed , 
+mostly for use by manufaturers to source materials
+#supplierlist #suppliers
+
+[IndiaMART](https://www.indiamart.com)
+Indian suppliers directory helps find suppliers and also products from all states.
 
 ## Interesting Github Repositories
 
