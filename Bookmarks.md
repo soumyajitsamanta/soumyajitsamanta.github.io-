@@ -171,6 +171,9 @@ Same as above but different list and ui.
 [First Timers](www.firsttimersonly.com)
 A site aggregate links related toopen source contribution.
 
+[Switching.software](https://switching.software)
+A collection of tools which are alternative to the non privacy respecting tools. Has tools sites and self hosting all linked inside.
+
 ### Text Tools
 
 [Hemingway](https://hemingwayapp.com/)
