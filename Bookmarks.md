@@ -6,6 +6,7 @@ As long as the number of links are small there will be a single table to take ca
 - [About](#about)
 - [Notes](#notes)
 - [Links](#links)
+  - [Hosting Services](#hosting-services)
   - [Decentralized Technologies:](#decentralized-technologies)
   - [References for Research 📚:](#references-for-research-)
   - [Interesting Github Repositories](#interesting-github-repositories)
@@ -35,6 +36,11 @@ Icons can be added via following methods in order of preference:
 
 # Links
 
+## Hosting Services
+
+[OMG.lol](https://home.omg.lol/)
+Hosting provider for eTLD with great sales pitch and services and explanation.
+
 ## Decentralized Technologies:
 
 > Note: This is different from cryptocurrency technologies in that these are lower level apis to create/work with decentralized technology and not a crypto node, coin, network or wallet.
@@ -58,13 +64,25 @@ Links to various IPFS hosted sites or other tools related to IPFS.
 [Open Research Library](https://openresearchlibrary.org/home)
 
 [Similarweb](https://www.similarweb.com/)
-Similarweb helps check and analyze web traffic for sites. Also see what the digital marketing efforts are by company. 
+Similarweb helps check and analyze web traffic for sites.
+Also see what the digital marketing efforts are by company. 
 #digitalmarketing #marketing-research
 
 [Macrotrends](https://www.macrotrends.net)
 Contains the data for many companies sourced from their earnings
 and investor relations documents and stores in one place shown in graphs.
 #financial-data #investor-relations
+
+[Interpack](https://www.interpack.com/)
+Its a conference on the packaging industry suppliers and consumers.
+
+[GlobalSources](https://www.globalsources.com)
+GlobalSources contains the things suppliers will supply and quantity listed , 
+mostly for use by manufaturers to source materials
+#supplierlist #suppliers
+
+[IndiaMART](https://www.indiamart.com)
+Indian suppliers directory helps find suppliers and also products from all states.
 
 ## Interesting Github Repositories
 
@@ -93,6 +111,12 @@ It gives quick minimal intro to ANTLR grammar with example.
 
 [Antlr Mega Tutorial](https://tomassetti.me/antlr-mega-tutorial/)
 Antlr tutorial in full depth from beginning.
+
+[Makefile Tutorial By Example](https://makefiletutorial.com)
+Teaches making makefile from simple start. No prerequisite.
+
+[Devblogs](https://devblogs.co/?dark=1)
+Stream of engineering blogs from top companies aggregated at one place.
 
 ## Security:
 
@@ -172,7 +196,14 @@ Same as above but different list and ui.
 A site aggregate links related toopen source contribution.
 
 [Switching.software](https://switching.software)
-A collection of tools which are alternative to the non privacy respecting tools. Has tools sites and self hosting all linked inside.
+A collection of tools which are alternative to the non privacy respecting tools.
+Has tools sites and self hosting all linked inside.
+
+[Overture](https://overturemaps.org/)
+For developers to get accurate maps for gesospatial data.
+
+[Megalinter](https://megalinter.io/latest/)
+Linter for lota of languages and files. Looks promising.
 
 ### Text Tools
 
