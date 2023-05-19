@@ -6,6 +6,7 @@ As long as the number of links are small there will be a single table to take ca
 - [About](#about)
 - [Notes](#notes)
 - [Links](#links)
+  - [Games](#games)
   - [Hosting Services](#hosting-services)
   - [Decentralized Technologies:](#decentralized-technologies)
   - [References for Research 📚:](#references-for-research-)
@@ -35,19 +36,31 @@ Icons can be added via following methods in order of preference:
 - Using emojis where they are suitable and present
 
 # Links
+
 ## Games
+
+[Caesaria](https://github.com/dalerank/caesaria-game)
+
+Open source Caesar 3 game. Build from source is easy.
+Gathering and using original game data easy.
 
 [ioq3](https://github.com/ioquake/ioq3)
 
 Ioquake open source engine based on id softwares original source.
+Build from source is easy. Gathering and using original game data easy.
 
-[Caesari](https://github.com/dalerank/caesaria-game)
+[Julius](https://github.com/bvschaik/julius)
 
-Open source Caesar 3 game.
+Another open source Caesar 3 game.
 
 [Mindustry](https://github.com/Anuken/Mindustry)
 
 Open source game for tower defense,original and fun.
+
+[OpenTTD](https://github.com/OpenTTD/OpenTTD)
+
+Open source simulation based on Transport Tycoon Deluxe.
+Build from source is easy. Gathering and using original game data easy.
 
 ## Hosting Services
 
