@@ -1,0 +1,381 @@
+<!-- Copyright of Soumyajit Samanta, 2023.
+    Project: HTML Page for Reference Creator.
+    For more specific way to find, owner of github account of soumyajitsamanta from 2015 to 2023.
+This code and its license should not be modified by anybody other than the author or authors mentioned above.
+The software is provided by as is and there is liability on the user and not the authors on how they use it.  -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reference Creator</title>
+    <style>
+      * {
+        text-align: justify;
+        font-size: 12pt;
+        font-family: "Times New Roman", Times, serif;
+        line-height: 150%;
+      }
+      h1 {
+        font-size: 24pt;
+        text-align: center;
+      }
+      h2 {
+        font-size: 20pt;
+      }
+      h3 {
+        font-size: 16pt;
+      }
+      h4 {
+        display: inline;
+        text-decoration: underline;
+      }
+      .note-inlined {
+        display: inline;
+        background-color: burlywood;
+        text-decoration: underline;
+      }
+      .note-inlined > .note-heading {
+        display: inline;
+      }
+      .note-inlined > em {
+        font-weight: 700;
+      }
+      .note-box {
+        display: flex;
+        flex-direction: row;
+        border: 1px solid black;
+        align-items: baseline;
+        margin: 0;
+        padding: 4px;
+        column-gap: 4px;
+      }
+      .note-box > em {
+        text-decoration: underline;
+      }
+      .inlined {
+        display: inline;
+      }
+      #label-before-entry-view {
+        width: 100%;
+        text-decoration: double underline;
+        text-align: center;
+      }
+      #entry-view {
+        height: 40vh;
+        overflow: scroll;
+        border: 1px double gray;
+      }
+      #entry-view > div {
+        display: flex;
+        flex-direction: row;
+        padding: 2px;
+      }
+      #entry-view > div * {
+        padding: 2px;
+      }
+      #entry-view > div input[type="text"] {
+        background-color: white;
+        border-width: 0 0 1px 0;
+        border-color: black;
+        border-style: solid;
+        margin-right: 10px;
+        transition: 300ms;
+      }
+      #entry-view > div input[type="text"]:focus {
+        outline: 0;
+        background-color: #85c1f6;
+        border-width: 0 0 1px 0;
+        border-style: dotted;
+      }
+      #entry-view > div input[type="text"]:focus-visible {
+        outline: 0;
+        background-color: #85c1f6;
+        border-width: 0 0 1px 0;
+        border-style: dotted;
+      }
+
+      #entry-add {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+
+      #generated-text-view {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 10px;
+      }
+      #generated-text {
+        resize: none;
+        width: 100%;
+        min-height: 200px;
+        font-family: 'Courier New', Courier, monospace;
+      }
+    </style>
+    <script>
+      // Source conforms to ES5 for older browser support.
+      /**
+       * Introduction:
+       *
+       * The entity is one type of reference representation.
+       * Reference is one entry in references page ir the view reference box.
+       *
+       * All code sections are denoted by the comments at their top ,
+       * major sections are seperated by ====== of varying length to cover the whole text.
+       *
+       * All variables below them are represented the purpose for them.
+       *
+       * To Do:
+       * - Try to get as much DOM and other parts seperated so that a reusable library be extracted to use else where.
+       * - Styling of components.
+       */
+      /* =================
+       * Reference Objects
+       * =================
+       */
+      /*
+       * The types of entries in reference available.
+       */
+      var typesOfEntities = { article: "article", online: "online" };
+      /*
+       * The fields in entries available.
+       */
+      var fieldsOfEntities = {
+        author: { name: "Author" },
+        title: { name: "Title" },
+        journaltitle: { name: "Journaltitle" },
+        year: { name: "Year" },
+        date: { name: "Date" },
+        translator: { name: "Translator" },
+        annotator: { name: "Annotator" },
+        commentator: { name: "Commentator" },
+        subtitle: { name: "Subtitle" },
+        titleaddon: { name: "Titleaddon" },
+        editor: { name: "Editor" },
+        editora: { name: "Editora" },
+        editorb: { name: "Editorb" },
+        editorc: { name: "Editorc" },
+        journalsubtitle: { name: "Journalsubtitle" },
+        journaltitleaddon: { name: "Journaltitleaddon" },
+        issuetitle: { name: "Issuetitle" },
+        issuesubtitle: { name: "Issuesubtitle" },
+        issuetitleaddon: { name: "Issuetitleaddon" },
+        language: { name: "Language" },
+        origlanguage: { name: "Origlanguage" },
+        series: { name: "Series" },
+        volume: { name: "Volume" },
+        number: { name: "Number" },
+        eid: { name: "Eid" },
+        issue: { name: "Issue" },
+        month: { name: "Month" },
+        pages: { name: "Pages" },
+        version: { name: "Version" },
+        note: { name: "Note" },
+        issn: { name: "Issn" },
+        addendum: { name: "Addendum" },
+        pubstate: { name: "Pubstate" },
+        doi: { name: "Doi" },
+        eprint: { name: "Eprint" },
+        eprintclass: { name: "Eprintclass" },
+        eprinttype: { name: "Eprinttype" },
+        url: { name: "Url" },
+        urldate: { name: "Urldate" },
+      };
+      /*
+       * The types of entries available with details.
+       */
+      var entityTypeDetails = {
+        article: {
+          displayName: "Article",
+          type: typesOfEntities.article,
+          requiredFields: ["author", "title", "journaltitle", "year", "date"],
+          optionalFields: [
+            "translator",
+            "annotator",
+            "commentator",
+            "subtitle",
+            "titleaddon",
+            "editor",
+            "editora",
+            "editorb",
+            "editorc",
+            "journalsubtitle",
+            "journaltitleaddon",
+            "issuetitle",
+            "issuesubtitle",
+            "issuetitleaddon",
+            "language",
+            "origlanguage",
+            "series",
+            "volume",
+            "number",
+            "eid",
+            "issue",
+            "month",
+            "pages",
+            "version",
+            "note",
+            "issn",
+            "addendum",
+            "pubstate",
+            "doi",
+            "eprint",
+            "eprintclass",
+            "eprinttype",
+            "url",
+            "urldate",
+          ],
+          description:
+            "Represents an article printed in a journal, magazine etc.",
+        },
+        online: {
+          displayName: "Online",
+          type: typesOfEntities.online,
+          requiredFields: ["author"],
+          optionalFields: ["title"],
+          description:
+            "Represents an online article or document or a whole site",
+        },
+      };
+      /* =================================
+       * Transactional Data About Entries.
+       * =================================
+       */
+      var entryData = {
+        entryViewData: { entries: [] },
+        entryAddData: {},
+      };
+      /*
+       * DOM Objects
+       */
+      var domObjectGetters = {
+        getEntryTypeSelection: () =>
+          document.querySelector("#entry-add > #entry-type"),
+        getEntryView: () => document.querySelector("#entry-view"),
+        getGeneratedTextView: () =>
+          document.querySelector("#generated-text-view"),
+        getGeneratedText: () => document.querySelector("#generated-text"),
+        createDomElementsForEntryType: (type) => {
+          var entry = {};
+          entryData.entryViewData.entries.push(entry);
+          var entryViewEntry = document.createElement("div");
+          [type.displayName, ...type.requiredFields, ...type.optionalFields];
+          type.requiredFields
+            .sort((a, b) => a > b)
+            .filter((field) => fieldsOfEntities[field] != null)
+            .map((field) => {
+              var label = document.createElement("label");
+              label.innerText = fieldsOfEntities[field].name + ":";
+              var inputBox = document.createElement("input");
+              inputBox.type = "text";
+              inputBox.name = field;
+              inputBox.addEventListener("change", (event) => {
+                entry[field] = event.target.value;
+                console.log([entry, field, event.target.value]);
+              });
+              entryViewEntry.append(label, inputBox);
+            });
+          var entryView = domObjectGetters.getEntryView();
+          entryView.append(entryViewEntry);
+        },
+        valueOfFieldInEntryChanged: (event) => {},
+      };
+      var eventHandlers = {
+        entryViewHandlers: {},
+        entryAddHandlers: {
+          addEntryClicked: function (event) {
+            var entryTypeEl = domObjectGetters.getEntryTypeSelection();
+            var selectedEntryType = entityTypeDetails[entryTypeEl.value];
+            console.log([entryTypeEl, selectedEntryType]);
+            domObjectGetters.createDomElementsForEntryType(selectedEntryType);
+          },
+        },
+        documentEventHandlers: {
+          bodyOnLoad: function (event) {
+            console.log(["onload", event]);
+            var entryTypeEl = domObjectGetters.getEntryTypeSelection();
+            [entityTypeDetails.article, entityTypeDetails.online].forEach(
+              (v) => {
+                var name = v.displayName;
+                var value = v.type;
+                entryTypeEl.appendChild(new Option(name, value, false, false));
+                // Not storing in object as data as this is considered source of the value alone.
+              }
+            );
+          },
+        },
+        generatedTextView: {
+          generateTextClicked: (event) => {
+            var generatedTextEl = domObjectGetters.getGeneratedText();
+            generatedTextEl.innerText="";
+            var entries = entryData.entryViewData.entries;
+            var numberOfEntries = entries.length;
+            var maxWidthOfNoEntries = Math.log10(numberOfEntries) + 1;
+            entries
+              .map((entry, index, a) => {
+                var humanReadableIndex = index+1;
+                var requiredWidthForIndex =
+                  maxWidthOfNoEntries - humanReadableIndex.toString().length;
+                var indexSpacing = " ".repeat(requiredWidthForIndex);
+                return `[${indexSpacing + humanReadableIndex}] Author: ${entry.author}`;
+              })
+              .forEach((a) => {
+                generatedTextEl.innerHTML+="\n"+a;
+              });
+          },
+        },
+      };
+    </script>
+  </head>
+  <body onload="eventHandlers.documentEventHandlers.bodyOnLoad(event)">
+    <h1>Reference Creator</h1>
+    <p>
+      This is to create reference when you cannot use the proper biblatex setup
+      and want to quickly get a reference formatted to text format. Check out
+      <a href="./reference-creator-docs">docs</a> for more about usage and
+      bibtex reference. For development docs check the View Source or visit
+      <a href="https://soumyajitsamanta.github.io">Project Source</a>
+    </p>
+    <div class="note-box">
+      <em>Note:</em>
+      <ul>
+        <li>
+          All data is stored in the browser and available in this session only.
+          Regularly generate the data and backup the generated data
+        </li>
+        <li>
+          Do not use in papers, journal, etc use the formats they specify. Do
+          not use where formats tools and instructions specified explicityly to
+          use a style. This does not produce correctly formatted output double
+          check and use.
+        </li>
+      </ul>
+    </div>
+    <div id="label-before-entry-view">Entries Added</div>
+    <div id="entry-view"></div>
+    <div id="entry-add">
+      <select id="entry-type"></select>
+      <input
+        id="add-entry"
+        type="submit"
+        value="Add Entry"
+        name="Add Entry"
+        onclick="eventHandlers.entryAddHandlers.addEntryClicked(event)"
+      />
+    </div>
+    <div id="generated-text-view">
+      <button
+        onclick="eventHandlers.generatedTextView.generateTextClicked(event)"
+      >
+        Generate Text
+      </button>
+      <textarea id="generated-text"></textarea>
+    </div>
+  </body>
+</html>
