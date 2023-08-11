@@ -62,6 +62,11 @@ The software is provided by as is and there is liability on the user and not the
         text-decoration: double underline;
         text-align: center;
       }
+      #label-before-generated-text{
+        width: 100%;
+        text-decoration: double underline;
+        text-align: center;
+      }
       #entry-view {
         height: 40vh;
         overflow: scroll;
@@ -71,12 +76,13 @@ The software is provided by as is and there is liability on the user and not the
         display: flex;
         flex-direction: row;
         padding: 2px;
+        align-items: center;
       }
       #entry-view > div * {
         padding: 2px;
       }
       #entry-view > div input[type="text"] {
-        background-color: white;
+        background-color: transparent;
         border-width: 0 0 1px 0;
         border-color: black;
         border-style: solid;
@@ -85,13 +91,13 @@ The software is provided by as is and there is liability on the user and not the
       }
       #entry-view > div input[type="text"]:focus {
         outline: 0;
-        background-color: #85c1f6;
+        background-color: hsl(120, 93%, 79%);
         border-width: 0 0 1px 0;
         border-style: dotted;
       }
       #entry-view > div input[type="text"]:focus-visible {
         outline: 0;
-        background-color: #85c1f6;
+        background-color: hsl(120, 93%, 79%);
         border-width: 0 0 1px 0;
         border-style: dotted;
       }
@@ -115,7 +121,33 @@ The software is provided by as is and there is liability on the user and not the
         resize: none;
         width: 100%;
         min-height: 200px;
-        font-family: 'Courier New', Courier, monospace;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .required-elements {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        background-color: hsl(120, 93%, 89%);
+        /* border: 1px dashed green; */
+      }
+      .required-elements * {
+        background-color: hsl(120, 93%, 89%);
+        min-width: max-content;
+      }
+      .optional-elements{
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        background-color: hsl(39, 100%, 70%);
+        min-width: max-content;
+      }
+      .optional-elements * {
+        background-color: hsl(39, 100%, 70%);
+      }
+      .delete-entry {
+        outline: 0;
+        border: 0;
+        min-width: max-content;
       }
     </style>
     <script>
@@ -123,6 +155,10 @@ The software is provided by as is and there is liability on the user and not the
       /**
        * Introduction:
        *
+       * This is a small no framework, pure html css and js application which enables you to add enties to reference which can be then generated into text entries to be used in some places.
+       * Though the format output of this is not the full standard APA.
+       * It is customized to the course with whom this was originally shared.
+       * 
        * The entity is one type of reference representation.
        * Reference is one entry in references page ir the view reference box.
        *
@@ -149,25 +185,25 @@ The software is provided by as is and there is liability on the user and not the
       var fieldsOfEntities = {
         author: { name: "Author" },
         title: { name: "Title" },
-        journaltitle: { name: "Journaltitle" },
+        journaltitle: { name: "Journal Title" },
         year: { name: "Year" },
         date: { name: "Date" },
         translator: { name: "Translator" },
         annotator: { name: "Annotator" },
         commentator: { name: "Commentator" },
         subtitle: { name: "Subtitle" },
-        titleaddon: { name: "Titleaddon" },
+        titleaddon: { name: "Title addon" },
         editor: { name: "Editor" },
-        editora: { name: "Editora" },
-        editorb: { name: "Editorb" },
-        editorc: { name: "Editorc" },
-        journalsubtitle: { name: "Journalsubtitle" },
-        journaltitleaddon: { name: "Journaltitleaddon" },
-        issuetitle: { name: "Issuetitle" },
-        issuesubtitle: { name: "Issuesubtitle" },
-        issuetitleaddon: { name: "Issuetitleaddon" },
+        editora: { name: "Editor a" },
+        editorb: { name: "Editor b" },
+        editorc: { name: "Editor c" },
+        journalsubtitle: { name: "Journal Subtitle" },
+        journaltitleaddon: { name: "Journal Titleaddon" },
+        issuetitle: { name: "Issue Title" },
+        issuesubtitle: { name: "Issue Subtitle" },
+        issuetitleaddon: { name: "Issue Title Addon" },
         language: { name: "Language" },
-        origlanguage: { name: "Origlanguage" },
+        origlanguage: { name: "Original Language" },
         series: { name: "Series" },
         volume: { name: "Volume" },
         number: { name: "Number" },
@@ -261,12 +297,38 @@ The software is provided by as is and there is liability on the user and not the
         getGeneratedTextView: () =>
           document.querySelector("#generated-text-view"),
         getGeneratedText: () => document.querySelector("#generated-text"),
-        createDomElementsForEntryType: (type) => {
-          var entry = {};
-          entryData.entryViewData.entries.push(entry);
-          var entryViewEntry = document.createElement("div");
-          [type.displayName, ...type.requiredFields, ...type.optionalFields];
-          type.requiredFields
+        entryViewLineServices: {
+          createTypeLabel:(displayName)=>{
+            var label = document.createElement("label");
+            label.innerText = displayName;
+            return label;
+          },
+          createDeleteButton: (entryElement, objectContainingEntry) => {
+            var deleteButton = document.createElement("button");
+            deleteButton.classList.add("delete-entry");
+            deleteButton.innerText="Delete Entry";
+            deleteButton.addEventListener("click", (event) => {
+              var index = entryData.entryViewData.entries.indexOf(objectContainingEntry);
+              if (index == -1) {
+                console.log("// show message cannot remove the entry being asked. Not found in list.");
+              }
+              entryData.entryViewData.entries.splice(index, 1);
+              entryElement.remove();
+            });
+            return deleteButton;
+          },
+          createOptionalElementsDiv: (fieldReferencesToAdd, bindToObject)=>{
+            var elementDiv = document.createElement("div");
+            elementDiv.classList.add("optional-elements");
+            domObjectGetters.entryViewLineServices
+            .createLabelInputBindingElements(fieldReferencesToAdd, bindToObject)
+            .forEach(el => {
+              elementDiv.append(el);
+            });
+            return elementDiv;
+          },
+          createLabelInputBindingElements:(fieldReferencesToAdd, bindToObject)=>{
+            var fieldDomsToAdd = fieldReferencesToAdd
             .sort((a, b) => a > b)
             .filter((field) => fieldsOfEntities[field] != null)
             .map((field) => {
@@ -276,13 +338,38 @@ The software is provided by as is and there is liability on the user and not the
               inputBox.type = "text";
               inputBox.name = field;
               inputBox.addEventListener("change", (event) => {
-                entry[field] = event.target.value;
-                console.log([entry, field, event.target.value]);
+                bindToObject[field] = event.target.value;
               });
-              entryViewEntry.append(label, inputBox);
+              return [label, inputBox];
+            })
+            .flatMap((a) => a);
+            return fieldDomsToAdd;
+          },
+          createRequiredElementsDiv:(fieldReferencesToAdd, bindToObject)=>{
+            var requiredElementsDiv = document.createElement("div");
+            requiredElementsDiv.classList.add("required-elements");
+            domObjectGetters.entryViewLineServices
+            .createLabelInputBindingElements(fieldReferencesToAdd, bindToObject)
+            .forEach(el => {
+              requiredElementsDiv.append(el);
             });
-          var entryView = domObjectGetters.getEntryView();
-          entryView.append(entryViewEntry);
+            return requiredElementsDiv;
+          }
+        },
+        createDomElementsForEntryType: (type) => {
+          var entry = {};
+          entryData.entryViewData.entries.push(entry);
+          var entryViewEntry = document.createElement("div");
+          var entryViewLine = [
+            domObjectGetters.entryViewLineServices.createDeleteButton(entryViewEntry, entry),
+            domObjectGetters.entryViewLineServices.createTypeLabel(type.displayName),
+            domObjectGetters.entryViewLineServices.createRequiredElementsDiv(type.requiredFields, entry),
+            domObjectGetters.entryViewLineServices.createOptionalElementsDiv(type.optionalFields, entry),
+          ];
+          entryViewLine.forEach(el=>{
+            entryViewEntry.append(el);
+          });
+          domObjectGetters.getEntryView().append(entryViewEntry);
         },
         valueOfFieldInEntryChanged: (event) => {},
       };
@@ -292,13 +379,11 @@ The software is provided by as is and there is liability on the user and not the
           addEntryClicked: function (event) {
             var entryTypeEl = domObjectGetters.getEntryTypeSelection();
             var selectedEntryType = entityTypeDetails[entryTypeEl.value];
-            console.log([entryTypeEl, selectedEntryType]);
             domObjectGetters.createDomElementsForEntryType(selectedEntryType);
           },
         },
         documentEventHandlers: {
           bodyOnLoad: function (event) {
-            console.log(["onload", event]);
             var entryTypeEl = domObjectGetters.getEntryTypeSelection();
             [entityTypeDetails.article, entityTypeDetails.online].forEach(
               (v) => {
@@ -313,23 +398,29 @@ The software is provided by as is and there is liability on the user and not the
         generatedTextView: {
           generateTextClicked: (event) => {
             var generatedTextEl = domObjectGetters.getGeneratedText();
-            generatedTextEl.innerText="";
+            generatedTextEl.innerText = "";
             var entries = entryData.entryViewData.entries;
             var numberOfEntries = entries.length;
             var maxWidthOfNoEntries = Math.log10(numberOfEntries) + 1;
             entries
               .map((entry, index, a) => {
-                var humanReadableIndex = index+1;
+                var humanReadableIndex = index + 1;
                 var requiredWidthForIndex =
                   maxWidthOfNoEntries - humanReadableIndex.toString().length;
                 var indexSpacing = " ".repeat(requiredWidthForIndex);
-                return `[${indexSpacing + humanReadableIndex}] Author: ${entry.author}`;
+                return `[${indexSpacing + humanReadableIndex}] Author: ${
+                  entry.author
+                }`;
               })
               .forEach((a) => {
-                generatedTextEl.innerHTML+="\n"+a;
+                generatedTextEl.innerHTML += "\n" + a;
               });
           },
         },
+      };
+      var serviceFunctions = {
+        entryViewServices: {},
+        
       };
     </script>
   </head>
@@ -337,7 +428,22 @@ The software is provided by as is and there is liability on the user and not the
     <h1>Reference Creator</h1>
     <p>
       This is to create reference when you cannot use the proper biblatex setup
-      and want to quickly get a reference formatted to text format. Check out
+      and want to quickly get a reference formatted to text format. 
+      </p>
+
+      <ol type="1">
+        <li>Select the type of entry you want to add.</li>
+        <li>Use the "Add Entry" button to add the entry. </li>
+        <li>Then fill in details you have in the fields mentioned.</li>
+        <li>Then click "Generate Text".</li>
+        <li>Copy the reference from the generated text box present below.</li>
+      </ol>
+      
+      
+      
+      
+    
+    <p>Check out
       <a href="./reference-creator-docs">docs</a> for more about usage and
       bibtex reference. For development docs check the View Source or visit
       <a href="https://soumyajitsamanta.github.io">Project Source</a>
@@ -357,8 +463,6 @@ The software is provided by as is and there is liability on the user and not the
         </li>
       </ul>
     </div>
-    <div id="label-before-entry-view">Entries Added</div>
-    <div id="entry-view"></div>
     <div id="entry-add">
       <select id="entry-type"></select>
       <input
@@ -369,12 +473,15 @@ The software is provided by as is and there is liability on the user and not the
         onclick="eventHandlers.entryAddHandlers.addEntryClicked(event)"
       />
     </div>
+    <div id="label-before-entry-view">Entries Added</div>
+    <div id="entry-view"></div>
     <div id="generated-text-view">
       <button
         onclick="eventHandlers.generatedTextView.generateTextClicked(event)"
       >
         Generate Text
       </button>
+      <div id="label-before-generated-text">Entries As Text</div>
       <textarea id="generated-text"></textarea>
     </div>
   </body>
