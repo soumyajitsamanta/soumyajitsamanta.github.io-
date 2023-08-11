@@ -17,6 +17,9 @@ The software is provided by as is and there is liability on the user and not the
         font-family: "Times New Roman", Times, serif;
         line-height: 150%;
       }
+      body {
+        padding: 10px;
+      }
       h1 {
         font-size: 24pt;
         text-align: center;
@@ -62,13 +65,13 @@ The software is provided by as is and there is liability on the user and not the
         text-decoration: double underline;
         text-align: center;
       }
-      #label-before-generated-text{
+      #label-before-generated-text {
         width: 100%;
         text-decoration: double underline;
         text-align: center;
       }
       #entry-view {
-        height: 40vh;
+        height: 200px;
         overflow: scroll;
         border: 1px double gray;
       }
@@ -134,7 +137,7 @@ The software is provided by as is and there is liability on the user and not the
         background-color: hsl(120, 93%, 89%);
         min-width: max-content;
       }
-      .optional-elements{
+      .optional-elements {
         display: flex;
         align-items: center;
         flex-direction: row;
@@ -158,7 +161,7 @@ The software is provided by as is and there is liability on the user and not the
        * This is a small no framework, pure html css and js application which enables you to add enties to reference which can be then generated into text entries to be used in some places.
        * Though the format output of this is not the full standard APA.
        * It is customized to the course with whom this was originally shared.
-       * 
+       *
        * The entity is one type of reference representation.
        * Reference is one entry in references page ir the view reference box.
        *
@@ -178,50 +181,54 @@ The software is provided by as is and there is liability on the user and not the
       /*
        * The types of entries in reference available.
        */
-      var typesOfEntities = { article: "article", online: "online" };
+      var typesOfEntities = {
+        article: "article",
+        online: "online",
+      };
       /*
        * The fields in entries available.
        */
       var fieldsOfEntities = {
-        author: { name: "Author" },
-        title: { name: "Title" },
-        journaltitle: { name: "Journal Title" },
-        year: { name: "Year" },
-        date: { name: "Date" },
-        translator: { name: "Translator" },
+        addendum: { name: "Addendum" },
         annotator: { name: "Annotator" },
+        author: { name: "Author" },
         commentator: { name: "Commentator" },
-        subtitle: { name: "Subtitle" },
-        titleaddon: { name: "Title addon" },
+        date: { name: "Date" },
+        doi: { name: "Doi" },
         editor: { name: "Editor" },
         editora: { name: "Editor a" },
         editorb: { name: "Editor b" },
         editorc: { name: "Editor c" },
-        journalsubtitle: { name: "Journal Subtitle" },
-        journaltitleaddon: { name: "Journal Titleaddon" },
-        issuetitle: { name: "Issue Title" },
-        issuesubtitle: { name: "Issue Subtitle" },
-        issuetitleaddon: { name: "Issue Title Addon" },
-        language: { name: "Language" },
-        origlanguage: { name: "Original Language" },
-        series: { name: "Series" },
-        volume: { name: "Volume" },
-        number: { name: "Number" },
         eid: { name: "Eid" },
-        issue: { name: "Issue" },
-        month: { name: "Month" },
-        pages: { name: "Pages" },
-        version: { name: "Version" },
-        note: { name: "Note" },
-        issn: { name: "Issn" },
-        addendum: { name: "Addendum" },
-        pubstate: { name: "Pubstate" },
-        doi: { name: "Doi" },
         eprint: { name: "Eprint" },
         eprintclass: { name: "Eprintclass" },
         eprinttype: { name: "Eprinttype" },
+        issn: { name: "Issn" },
+        issue: { name: "Issue" },
+        issuesubtitle: { name: "Issue Subtitle" },
+        issuetitle: { name: "Issue Title" },
+        issuetitleaddon: { name: "Issue Title Addon" },
+        journalsubtitle: { name: "Journal Subtitle" },
+        journaltitle: { name: "Journal Title" },
+        journaltitleaddon: { name: "Journal Titleaddon" },
+        language: { name: "Language" },
+        month: { name: "Month" },
+        note: { name: "Note" },
+        number: { name: "Number" },
+        origlanguage: { name: "Original Language" },
+        pages: { name: "Pages" },
+        pubstate: { name: "Pubstate" },
+        series: { name: "Series" },
+        subtitle: { name: "Subtitle" },
+        title: { name: "Title" },
+        titleaddon: { name: "Title addon" },
+        translator: { name: "Translator" },
         url: { name: "Url" },
         urldate: { name: "Urldate" },
+        version: { name: "Version" },
+        volume: { name: "Volume" },
+        year: { name: "Year" },
+        organization: { name: "Organization" },
       };
       /*
        * The types of entries available with details.
@@ -230,42 +237,47 @@ The software is provided by as is and there is liability on the user and not the
         article: {
           displayName: "Article",
           type: typesOfEntities.article,
-          requiredFields: ["author", "title", "journaltitle", "year", "date"],
+          requiredFields: [
+            "author",
+            "title",
+            "journaltitle",
+            /* "year",*/ "date",
+          ],
           optionalFields: [
-            "translator",
-            "annotator",
-            "commentator",
-            "subtitle",
-            "titleaddon",
-            "editor",
-            "editora",
-            "editorb",
-            "editorc",
-            "journalsubtitle",
-            "journaltitleaddon",
-            "issuetitle",
-            "issuesubtitle",
-            "issuetitleaddon",
-            "language",
-            "origlanguage",
-            "series",
-            "volume",
-            "number",
-            "eid",
-            "issue",
-            "month",
-            "pages",
-            "version",
-            "note",
-            "issn",
-            "addendum",
-            "pubstate",
-            "doi",
-            "eprint",
-            "eprintclass",
-            "eprinttype",
-            "url",
-            "urldate",
+            // "translator",
+            // "annotator",
+            // "commentator",
+            // "subtitle",
+            // "titleaddon",
+            // "editor",
+            // "editora",
+            // "editorb",
+            // "editorc",
+            // "journalsubtitle",
+            // "journaltitleaddon",
+            // "issuetitle",
+            // "issuesubtitle",
+            // "issuetitleaddon",
+            // "language",
+            // "origlanguage",
+            // "series",
+            // "volume",
+            // "number",
+            // "eid",
+            // "issue",
+            // "month",
+            // "pages",
+            // "version",
+            // "note",
+            // "issn",
+            // "addendum",
+            // "pubstate",
+            // "doi",
+            // "eprint",
+            // "eprintclass",
+            // "eprinttype",
+            // "url",
+            // "urldate",
           ],
           description:
             "Represents an article printed in a journal, magazine etc.",
@@ -273,8 +285,29 @@ The software is provided by as is and there is liability on the user and not the
         online: {
           displayName: "Online",
           type: typesOfEntities.online,
-          requiredFields: ["author"],
-          optionalFields: ["title"],
+          requiredFields: [
+            "author",
+            // "editor",
+            "title",
+            // "year",
+            "date",
+            "url",
+            "doi",
+          ],
+          optionalFields: [
+            "subtitle",
+            "titleaddon",
+            "language",
+            "version",
+            "note",
+            "organization",
+            "month",
+            "addendum",
+            "pubstate",
+            "eprintclass",
+            "eprinttype",
+            "urldate",
+          ],
           description:
             "Represents an online article or document or a whole site",
         },
@@ -298,7 +331,7 @@ The software is provided by as is and there is liability on the user and not the
           document.querySelector("#generated-text-view"),
         getGeneratedText: () => document.querySelector("#generated-text"),
         entryViewLineServices: {
-          createTypeLabel:(displayName)=>{
+          createTypeLabel: (displayName) => {
             var label = document.createElement("label");
             label.innerText = displayName;
             return label;
@@ -306,67 +339,97 @@ The software is provided by as is and there is liability on the user and not the
           createDeleteButton: (entryElement, objectContainingEntry) => {
             var deleteButton = document.createElement("button");
             deleteButton.classList.add("delete-entry");
-            deleteButton.innerText="Delete Entry";
+            deleteButton.innerText = "Delete Entry";
             deleteButton.addEventListener("click", (event) => {
-              var index = entryData.entryViewData.entries.indexOf(objectContainingEntry);
+              var index = entryData.entryViewData.entries.indexOf(
+                objectContainingEntry
+              );
               if (index == -1) {
-                console.log("// show message cannot remove the entry being asked. Not found in list.");
+                console.log(
+                  "// show message cannot remove the entry being asked. Not found in list."
+                );
               }
               entryData.entryViewData.entries.splice(index, 1);
               entryElement.remove();
             });
             return deleteButton;
           },
-          createOptionalElementsDiv: (fieldReferencesToAdd, bindToObject)=>{
+          createOptionalElementsDiv: (fieldReferencesToAdd, bindToObject) => {
             var elementDiv = document.createElement("div");
             elementDiv.classList.add("optional-elements");
             domObjectGetters.entryViewLineServices
-            .createLabelInputBindingElements(fieldReferencesToAdd, bindToObject)
-            .forEach(el => {
-              elementDiv.append(el);
-            });
+              .createLabelInputBindingElements(
+                fieldReferencesToAdd,
+                bindToObject
+              )
+              .forEach((el) => {
+                elementDiv.append(el);
+              });
             return elementDiv;
           },
-          createLabelInputBindingElements:(fieldReferencesToAdd, bindToObject)=>{
+          createLabelInputBindingElements: (
+            fieldReferencesToAdd,
+            bindToObject
+          ) => {
             var fieldDomsToAdd = fieldReferencesToAdd
-            .sort((a, b) => a > b)
-            .filter((field) => fieldsOfEntities[field] != null)
-            .map((field) => {
-              var label = document.createElement("label");
-              label.innerText = fieldsOfEntities[field].name + ":";
-              var inputBox = document.createElement("input");
-              inputBox.type = "text";
-              inputBox.name = field;
-              inputBox.addEventListener("change", (event) => {
-                bindToObject[field] = event.target.value;
-              });
-              return [label, inputBox];
-            })
-            .flatMap((a) => a);
+              .sort((a, b) => a > b)
+              .filter((field) => {
+                var isValidField = fieldsOfEntities[field] != null;
+                if (!isValidField) {
+                  console.log("Not a valid field refernce:" + field);
+                }
+                return isValidField;
+              })
+              .map((field) => {
+                var label = document.createElement("label");
+                label.innerText = fieldsOfEntities[field].name + ":";
+                var inputBox = document.createElement("input");
+                inputBox.type = "text";
+                inputBox.name = field;
+                inputBox.addEventListener("change", (event) => {
+                  bindToObject[field] = event.target.value;
+                });
+                return [label, inputBox];
+              })
+              .flatMap((a) => a);
             return fieldDomsToAdd;
           },
-          createRequiredElementsDiv:(fieldReferencesToAdd, bindToObject)=>{
+          createRequiredElementsDiv: (fieldReferencesToAdd, bindToObject) => {
             var requiredElementsDiv = document.createElement("div");
             requiredElementsDiv.classList.add("required-elements");
             domObjectGetters.entryViewLineServices
-            .createLabelInputBindingElements(fieldReferencesToAdd, bindToObject)
-            .forEach(el => {
-              requiredElementsDiv.append(el);
-            });
+              .createLabelInputBindingElements(
+                fieldReferencesToAdd,
+                bindToObject
+              )
+              .forEach((el) => {
+                requiredElementsDiv.append(el);
+              });
             return requiredElementsDiv;
-          }
+          },
         },
         createDomElementsForEntryType: (type) => {
           var entry = {};
           entryData.entryViewData.entries.push(entry);
           var entryViewEntry = document.createElement("div");
           var entryViewLine = [
-            domObjectGetters.entryViewLineServices.createDeleteButton(entryViewEntry, entry),
-            domObjectGetters.entryViewLineServices.createTypeLabel(type.displayName),
-            domObjectGetters.entryViewLineServices.createRequiredElementsDiv(type.requiredFields, entry),
-            domObjectGetters.entryViewLineServices.createOptionalElementsDiv(type.optionalFields, entry),
+            domObjectGetters.entryViewLineServices.createDeleteButton(
+              entryViewEntry,
+              entry
+            ),
+            domObjectGetters.entryViewLineServices.createTypeLabel(
+              type.displayName
+            ),
+            domObjectGetters.entryViewLineServices.createRequiredElementsDiv(
+              type.requiredFields,
+              entry
+            ),
+            domObjectGetters.entryViewLineServices.createOptionalElementsDiv(
+              type.optionalFields,
+              entry
+            ),
           ];
-          entryViewLine.forEach(el=>{
+          entryViewLine.forEach((el) => {
             entryViewEntry.append(el);
           });
           domObjectGetters.getEntryView().append(entryViewEntry);
@@ -408,9 +471,26 @@ The software is provided by as is and there is liability on the user and not the
                 var requiredWidthForIndex =
                   maxWidthOfNoEntries - humanReadableIndex.toString().length;
                 var indexSpacing = " ".repeat(requiredWidthForIndex);
-                return `[${indexSpacing + humanReadableIndex}] Author: ${
-                  entry.author
-                }`;
+
+                var retirevedSource = fetchFirstValue([
+                  entry.url,
+                  entry.doi,
+                  "",
+                ]);
+                if ("" != retirevedSource) {
+                  retirevedSource = "Retrieved from " + retirevedSource;
+                }
+                var author = fetchFirstValue([entry.author, "Author Missing"]);
+                var date = fetchFirstValue([entry.date, entry.year, "N.D."]);
+                return `[${
+                  indexSpacing + humanReadableIndex
+                }] ${author} (${date}). ${fetchFirstValue([
+                  entry.title,
+                  "",
+                ])} ${fetchFirstValue([
+                  entry.journaltitle,
+                  "",
+                ])}.  ${retirevedSource}`;
               })
               .forEach((a) => {
                 generatedTextEl.innerHTML += "\n" + a;
@@ -418,34 +498,29 @@ The software is provided by as is and there is liability on the user and not the
           },
         },
       };
-      var serviceFunctions = {
-        entryViewServices: {},
-        
-      };
+      function fetchFirstValue(listOfString) {
+        return listOfString.filter((a) => a != null && a != "")[0] || "";
+      }
     </script>
   </head>
   <body onload="eventHandlers.documentEventHandlers.bodyOnLoad(event)">
     <h1>Reference Creator</h1>
     <p>
       This is to create reference when you cannot use the proper biblatex setup
-      and want to quickly get a reference formatted to text format. 
-      </p>
+      and want to quickly get a reference formatted to text format.
+    </p>
 
-      <ol type="1">
-        <li>Select the type of entry you want to add.</li>
-        <li>Use the "Add Entry" button to add the entry. </li>
-        <li>Then fill in details you have in the fields mentioned.</li>
-        <li>Then click "Generate Text".</li>
-        <li>Copy the reference from the generated text box present below.</li>
-      </ol>
-      
-      
-      
-      
-    
-    <p>Check out
-      <a href="./reference-creator-docs">docs</a> for more about usage and
-      bibtex reference. For development docs check the View Source or visit
+    <ol type="1">
+      <li>Select the type of entry you want to add.</li>
+      <li>Use the "Add Entry" button to add the entry.</li>
+      <li>Then fill in details you have in the fields mentioned.</li>
+      <li>Then click "Generate Text".</li>
+      <li>Copy the reference from the generated text box present below.</li>
+    </ol>
+
+    <p>
+      Check out <a href="./reference-creator-docs">docs</a> for more about usage
+      and bibtex reference. For development docs check the View Source or visit
       <a href="https://soumyajitsamanta.github.io">Project Source</a>
     </p>
     <div class="note-box">
