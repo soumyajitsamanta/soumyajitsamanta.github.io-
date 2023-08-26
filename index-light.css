@@ -1,0 +1,99 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+body * {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 10em;
+    background-color: blanchedalmond;
+    box-sizing: border-box;
+    border: 2px solid hsl(36, 100%, 70%);
+}
+
+.text-centered {
+    text-align: center;
+}
+
+h1.title a {
+    text-decoration: underline dashed;
+}
+
+.card-holder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    padding: 0 1em;
+}
+
+.card {
+    width: 10em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    text-decoration: none;
+    color: inherit;
+    transition: all 500ms;
+    box-sizing: border-box;
+    border-bottom: .5em solid transparent;
+}
+
+.card * {
+    margin: 0;
+    transition: all 300ms;
+}
+
+.card:hover {
+    background-color: hsl(216, 50%, 90%);
+    border-bottom: .5em solid black;
+}
+
+.card:hover>h3 {
+     text-decoration: underline;
+}
+
+.card>h3 {
+    width: 100%;
+    padding: .5em 0;
+    background-color: hsl(210, 100%, 70%);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+
+
+
+
+.card>p {
+    padding: .5em;
+}
+
+
+/* Utility Classes */
+.bg-4th-color {
+    background-color: hsl(216, 50%, 80%);
+    ;
+}
+
+.title-case {
+    text-transform: capitalize;
+}
+
+.padding-b-1em {
+    padding-bottom: 1em;
+}
+
+.underlined {
+    text-decoration: underline;
+}
