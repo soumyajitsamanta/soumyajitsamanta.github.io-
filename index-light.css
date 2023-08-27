@@ -13,18 +13,18 @@ header.hero {
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 10em;
+    height: 5em;
     background-color: blanchedalmond;
     box-sizing: border-box;
     border: 2px solid hsl(36, 100%, 70%);
 }
 
-.text-centered {
-    text-align: center;
+.hero>.title {
+    text-decoration: underline double;
 }
 
-h1.title a {
-    text-decoration: underline dashed;
+.text-centered {
+    text-align: center;
 }
 
 .card-holder {
@@ -33,11 +33,19 @@ h1.title a {
     flex-wrap: wrap;
     justify-content: center;
     gap: 1em;
-    padding: 0 1em;
+    padding: 1.5em 1em;
+    margin: 0 1em 1em 1em;
+    background-color: #eee;
+    border: 1px solid hsl(36, 100%, 70%);
+    border-radius: 1em;
+    box-shadow: 
+    0 .5em 1em -0.2em gray, 
+    0 .5em 1em -.2em white inset,
+    0 -0.5em 1em -1em black inset;
 }
 
 .card {
-    width: 10em;
+    width: 15em;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,7 +54,12 @@ h1.title a {
     color: inherit;
     transition: all 500ms;
     box-sizing: border-box;
-    border-bottom: .5em solid transparent;
+    border-radius: 24px;
+    overflow: hidden;
+    margin-top: .5em;
+    margin-bottom: 0;
+    background-color: hsl(216, 50%, 90%);
+
 }
 
 .card * {
@@ -54,29 +67,46 @@ h1.title a {
     transition: all 300ms;
 }
 
+.header-above-card-holder {
+    margin: 1em;
+    background-color: blanchedalmond;
+    border: 2px solid hsl(36, 100%, 70%);;
+    border-radius: 24px;;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-bottom: 0;
+}
+
 .card:hover {
-    background-color: hsl(216, 50%, 90%);
-    border-bottom: .5em solid black;
+    background-color: hsl(216, 60%, 90%);
+    box-shadow: 0 0.5em 1.5em -.5em gray;
+    scale: 1.05;
+    margin-top: 0;
+    margin-bottom: .5em;
 }
 
 .card:hover>h3 {
-     text-decoration: underline;
+    text-decoration: hsl(36, 100%, 70%) underline;
 }
 
 .card>h3 {
     width: 100%;
     padding: .5em 0;
-    background-color: hsl(210, 100%, 70%);
+    background-color: blanchedalmond;
     text-align: center;
     box-sizing: border-box;
+    padding: 1em;
+    text-decoration: hsl(36, 100%, 70%) none;
+    border: 1px solid hsl(36, 100%, 70%);
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+
+
 }
-
-
-
-
 
 .card>p {
     padding: .5em;
+    text-align: center;
 }
 
 
@@ -94,6 +124,15 @@ h1.title a {
     padding-bottom: 1em;
 }
 
-.underlined {
+.underlined-single {
     text-decoration: underline;
 }
+
+.bg-white {
+    background-color: white;
+}
+
+.bor-rad-1em{
+    border-radius: 2em;
+}
+
