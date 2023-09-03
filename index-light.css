@@ -8,92 +8,52 @@ body * {
 }
 
 header.hero {
+    height: 80px;
+    width: 100%;
+}
+
+header.hero >.title {
+    text-align: center;
+}
+
+.icon-nav {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
     width: 100%;
-    height: 10em;
-    background-color: blanchedalmond;
-    box-sizing: border-box;
-    border: 2px solid hsl(36, 100%, 70%);
+    background-color: hsl(229, 100%, 83%);
+    padding: 4px;
+}
+
+.icon-nav  div {
+    /* display: flex; */
+    /* flex-direction: row; */
+    /* justify-content: center; */
+    /* align-items: center; */
+    background-color: white;
+    padding: 10px;
+    border: 1px solid hsl(229, 100%, 70%);
+    border-radius: 10px;
+}
+
+.icon-nav  div:hover {
+    border-top-color: hsl(229, 100%, 80%);
+    border-bottom-color: hsl(229, 100%, 50%);
+}
+
+.icon-nav  div  img {
+    display: block;
+    height: 48px;
+}
+
+.icon-nav  div  span {
+    text-align: center;
+    display: block;
 }
 
 .text-centered {
     text-align: center;
-}
-
-h1.title a {
-    text-decoration: underline dashed;
-}
-
-.card-holder {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1em;
-    padding: 0 1em;
-}
-
-.card {
-    width: 10em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: start;
-    text-decoration: none;
-    color: inherit;
-    transition: all 500ms;
-    box-sizing: border-box;
-    border-bottom: .5em solid transparent;
-}
-
-.card * {
-    margin: 0;
-    transition: all 300ms;
-}
-
-.card:hover {
-    background-color: hsl(216, 50%, 90%);
-    border-bottom: .5em solid black;
-}
-
-.card:hover>h3 {
-     text-decoration: underline;
-}
-
-.card>h3 {
-    width: 100%;
-    padding: .5em 0;
-    background-color: hsl(210, 100%, 70%);
-    text-align: center;
-    box-sizing: border-box;
-}
-
-
-
-
-
-.card>p {
-    padding: .5em;
-}
-
-
-/* Utility Classes */
-.bg-4th-color {
-    background-color: hsl(216, 50%, 80%);
-    ;
-}
-
-.title-case {
-    text-transform: capitalize;
-}
-
-.padding-b-1em {
-    padding-bottom: 1em;
-}
-
-.underlined {
-    text-decoration: underline;
 }
