@@ -11,12 +11,14 @@ body {
     --color-two: hsl(0, 100%, 70%);
     --color-three: hsl(90, 100%, 70%);
     --color-four: hsl(220, 100%, 70%);
+    --color-five: green;
     --hue-primary: 229;
 }
 
 header.hero {
     height: 80px;
     width: 100%;
+    padding: .7em;
 }
 
 header.hero>.title {
@@ -44,6 +46,9 @@ header.hero>.title {
     border-radius: 10px;
     min-width: 4.5em;
     height: 2em;
+    text-decoration: none;
+    color: black;
+    font-size: 1.2em;
 }
 
 section#section-projects {
