@@ -1,0 +1,65 @@
+html {
+    scroll-behavior: smooth;
+}
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --color-primary: hsl(220, 100%, 70%);
+    --color-secondary: hsl(220, 100%, 80%);
+    --color-one: hsl(50, 100%, 50%);
+    --color-two: hsl(0, 100%, 70%);
+    --color-three: hsl(90, 100%, 70%);
+    --color-four: hsl(220, 100%, 70%);
+    --hue-primary: 229;
+}
+
+header.hero {
+    height: 80px;
+    width: 100%;
+}
+
+header.hero>.title {
+    text-align: center;
+}
+
+.icon-nav {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    background-color: var(--color-secondary);
+    width: 100%;
+    padding: 4px 0;
+}
+
+.icon-nav > * {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-secondary);
+    padding: 10px;
+    border: 2px solid var(--color-primary);
+    border-radius: 10px;
+    min-width: 4.5em;
+    height: 2em;
+}
+
+section#section-projects {
+    min-height: 4em;
+    background-color: var(--color-one);
+    align-items: flex-start;
+    justify-content: center;
+}
+
+section#section-about {
+    min-height: 4em;
+    background-color: var(--color-two);
+    align-items: flex-start;
+    justify-content: center;
+}
+
+footer#page-footer {
+    padding: 2px 1em;
+}
