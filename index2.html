@@ -22,23 +22,50 @@
 </head>
 
 <body>
+  <!-- 
+    TODO:
+    1. Simplify the classes and css entries.
+    2. Add more colors to new pages and not to this page.
+    3. Use minimal CSS frameworks in new pages.
+    4. Get the plain paper style into CSS file/library for use at more places and look good as well.
+    5. Recreate links and bookmarks page with html.
+    6. Get more pictures into the pages after adding them to other place with attribution.
+   -->
   <header class="hero bg-color-5">
     <h1 class="title">Soumyajit's Home</h1>
   </header>
 
   <nav class="icon-nav flex-horizontal bg-color-5">
     <a href="#section-projects">Projects 🧑‍💻</a>
-    <a href="bookmarks">Interesting Links 🔗</a>
+    <a href="./Bookmarks">Interesting Links 🔗</a>
     <a href="#section-about">About Me 🪪</a>
   </nav>
 
   <section id="section-projects" class="width-full flex-horizontal flex-wrap padding-1em">
     <h1 class="text-centered padding-4px width-8em pos-sticky bg-color-1 sm-opacity-70">Projects 🧑‍💻</h1>
     <div class="width-500px">
+      <h2>Reference Creator Experiment</h2>
+      <p class="justified">This is an experiment to create a no frameowrk single file self contained html to create
+        references in APA 7 style and also print them in text to be used for assignments.</p>
+      <a href="./reference-creator">Check The Site</a>
+      Or
+      <a href="./reference-creator-docs"> Docs</a>
+      <p> The goal of the experiment was to:</p>
+      <ol>
+        <li>[Done] Use DOM functions.</li>
+        <li>[50%] Use styling like plain paper journal page.</li>
+        <li>[Done] Put all files in one file and organize them for development.</li>
+      </ol>
+      <p>The outcome of experiment was:</p>
+      <ol>
+        <li>DOM functions and event listeners were utilized well.</li>
+        <li>Explore minimal CSS frameworks like PicoCSS, Bootstrap etc for styling.</li>
+        <li>Prefer utilities and libraries like Lodash, Preact, etc to make dev easy. Both with build tools and without
+          build tools we can get lot of benefits.</li>
+      </ol>
+
       <h2>Work Project 1</h2>
-      <h3>
-        August 2016 to September 2018
-      </h3>
+      <h3>August 2016 to September 2018</h3>
       <p class="justified">
         I was part of team who was to take the old Struts application to Spring project.
         Thus the strut project with JSP and backend combined together, was split to UI project and backend restful
@@ -141,8 +168,10 @@
   <section id="section-about" class="width-full flex-horizontal flex-wrap padding-1em">
     <h1 class="text-centered padding-4px width-8em pos-sticky bg-color-2 sm-opacity-70">About Me 🪪</h1>
     <div class="width-500px">
-      I am Soumyajit Samanta, a full stack developer with 7 years of experience working with Java, Spring Boot, Angular and React.
-      I have worked with various MNCs as software developer. I took the roles of fullstack developer and those helped me learn and increase skills.
+      I am Soumyajit Samanta, a full stack developer with 7 years of experience working with Java, Spring Boot, Angular
+      and React.
+      I have worked with various MNCs as software developer. I took the roles of fullstack developer and those helped me
+      learn and increase skills.
     </div>
   </section>
 
