@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmarks</title>
+    <style>
+        :root {
+            --color-1: violet;
+            --color-2: blueviolet;
+            --color-3: white;
+        }
+
+        .bgr-c1-c2 {background-image: linear-gradient(var(--color-1), var(--color-2));}
+        .bgr-c1-c3 {background-image: linear-gradient(var(--color-1), var(--color-3));}
+        .bgr-c2-c1 {background-image: linear-gradient(var(--color-2), var(--color-1));}
+        .bgr-c2-c3 {background-image: linear-gradient(var(--color-2), var(--color-3));}
+        .bgr-c3-c1 {background-image: linear-gradient(var(--color-3), var(--color-1));}
+        .bgr-c3-c2 {background-image: linear-gradient(var(--color-3), var(--color-2));}
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+            font-size: xx-large;
+            height: 3em;
+            padding: 1em;
+            color: white;
+            /* text-shadow: 0 3px 6px black; */
+        }
+
+        .bg-color-1 {
+            background-color: var(--color-1);
+        }
+
+        .bg-color-2 {
+            background-color: var(--color-2);
+        }
+
+        .bg-color-3 {
+            background-color: var(--color-3);
+        }
+
+        header.main{
+            
+        }
+        header.main>h1 {
+            margin: 0;
+            height: 1em;
+            text-shadow: 0 3px 6px black;
+        }
+        section {
+            box-shadow: inset 0px 4px 10px black;
+            padding: 1em;
+        }
+        section:nth-of-type(1){
+            background-color: red;
+        }
+        section:nth-of-type(2){
+            background-color: blue;
+        }
+        section:nth-of-type(3){
+            background-color: black;
+        }
+        .wi-100pc {
+            width: 100%;
+        }
+
+        .ht-1em {
+            height: 1em;
+        }
+
+        .p-1em {
+            padding: 1em;
+        }
+
+        .p-t-1em {
+            padding-top: 1em;
+        }
+
+        .p-b-1em {
+            padding-bottom: 1em;
+        }
+
+        .bo-0 {
+            border: 0 solid;
+        }
+
+        .bo-2px {
+            border: 2px solid;
+        }
+
+        .bo-black {
+            border-color: black;
+        }
+
+        .bo-r-1em {
+            border-radius: 1em;
+        }
+
+        .m-1px {
+            margin: 1px;
+        }
+        .ta-centered{
+            text-align: center;
+        }
+        .f-s-xxl{
+            font-size: xx-large;
+        }
+        .sticky {
+            position: sticky;
+            top:0
+        }
+        .t-c-1 {
+            color: var(--color-1);
+        }
+        .t-c-2 {
+            color: var(--color-2);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main bgr-c1-c2 bo-0">
+        <h1 id="about" class=" bo-0">Bookmarks</h1>
+    </header>
+    <!-- <div class="wi-100pc ht-1em"></div> -->
+    <section class="p-1em toc">
+        <h1 class="ta-centered f-s-xxl sticky">Categories</h1>
+        <div class="m-1px bo-2px bo-black bo-r-1em p-t-1em p-b-1em bg-color-3">
+
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#notes">Notes</a></li>
+                <li><a href="#links">Links</a>
+                    <ul>
+                        <li><a href="#games">Games</a></li>
+                        <li><a href="#hosting-services">Hosting Services</a></li>
+                        <li><a href="#decentralized-technologies">Decentralized Technologies:</a></li>
+                        <li><a href="#references-for-research-">References for Research 📚:</a></li>
+                        <li><a href="#interesting-github-repositories">Interesting Github Repositories</a></li>
+                        <li><a href="#interesting-reads">Interesting Reads</a></li>
+                        <li><a href="#security">Security:</a></li>
+                        <li><a href="#productivity">Productivity</a></li>
+                        <li><a href="#data-and-statistics">Data And Statistics:</a></li>
+                        <li><a href="#study-help">Study Help</a></li>
+                        <li><a href="#video-effects-and-editing">Video Effects and Editing</a></li>
+                        <li><a href="#tools">Tools</a>
+                            <ul>
+                                <li><a href="#text-tools">Text Tools</a></li>
+                                <li><a href="#design-tools">Design Tools</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#coordinates-of-cruptocurrency-world">Coordinates Of Cruptocurrency World</a>
+                            <ul>
+                                <li><a href="#betting-in-crypto">Betting In Crypto</a></li>
+                                <li><a href="#virtual-credit-cards-funded-by-crypto">Virtual Credit Cards Funded by
+                                        Crypto</a></li>
+                                <li><a href="#defi">Defi</a></li>
+                                <li><a href="#testnet-faucets">Testnet Faucets:</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#books">Books</a></li>
+                <li><a href="#disclaimer">Disclaimer</a></li>
+            </ul>
+        </div>
+    </section>
+    <section class="bgr-c2-c1">
+        <h1 id="notes">Notes</h1>
+        <p>Icons can be added via following methods in order of preference:</p>
+        <ul>
+            <li>Markdown image inclusion using ![]()</li>
+            <li>Using the img tags &lt;img src=”” width=”” height=””&gt;&lt;/img&gt;</li>
+            <li>Using emojis where they are suitable and present</li>
+        </ul>
+    </section>
+    <section>
+        <h1 id="links">Links</h1>
+        <h2 id="games">Games</h2>
+        <p><a href="https://github.com/dalerank/caesaria-game">Caesaria</a></p>
+        <p>Open source Caesar 3 game. Build from source is easy.
+            Gathering and using original game data easy.</p>
+        <p><a href="https://github.com/ioquake/ioq3">ioq3</a></p>
+        <p>Ioquake open source engine based on id softwares original source.
+            Build from source is easy. Gathering and using original game data easy.</p>
+        <p><a href="https://github.com/bvschaik/julius">Julius</a></p>
+        <p>Another open source Caesar 3 game.</p>
+        <p><a href="https://github.com/Anuken/Mindustry">Mindustry</a></p>
+        <p>Open source game for tower defense,original and fun.</p>
+        <p><a href="https://github.com/OpenTTD/OpenTTD">OpenTTD</a></p>
+        <p>Open source simulation based on Transport Tycoon Deluxe.
+            Build from source is easy. Gathering and using original game data easy.</p>
+        <h2 id="hosting-services">Hosting Services</h2>
+        <p><a href="https://home.omg.lol/">OMG.lol</a>
+            Hosting provider for eTLD with great sales pitch and services and explanation.</p>
+        <h2 id="decentralized-technologies">Decentralized Technologies:</h2>
+        <blockquote>
+            <p>Note: This is different from cryptocurrency technologies in that these are lower level apis to
+                create/work with decentralized technology and not a crypto node, coin, network or wallet.</p>
+        </blockquote>
+        <p><a href="https://awesome.ipfs.tech">Awesome IPFS</a>
+            Links to various IPFS hosted sites or other tools related to IPFS.</p>
+        <h2 id="references-for-research-">References for Research 📚:</h2>
+        <p><a href="https://www.proquest.com">ProQuest</a></p>
+        <p><a href="https://www.ebsco.com">EBSCO</a></p>
+        <p><a href="https://www.statista.com">Statista</a></p>
+        <p><a href="https://www.elsevier.com/en-in">Elsevier</a></p>
+        <p><a href="https://www.doabooks.org/">Directory of Open Access Journals</a></p>
+        <p><a href="https://openresearchlibrary.org/home">Open Research Library</a></p>
+        <p><a href="https://www.similarweb.com/">Similarweb</a>
+            Similarweb helps check and analyze web traffic for sites.
+            Also see what the digital marketing efforts are by company.
+            #digitalmarketing #marketing-research</p>
+        <p><a href="https://www.macrotrends.net">Macrotrends</a>
+            Contains the data for many companies sourced from their earnings
+            and investor relations documents and stores in one place shown in graphs.
+            #financial-data #investor-relations</p>
+        <p><a href="https://www.interpack.com/">Interpack</a>
+            Its a conference on the packaging industry suppliers and consumers.</p>
+        <p><a href="https://www.globalsources.com">GlobalSources</a>
+            GlobalSources contains the things suppliers will supply and quantity listed ,
+            mostly for use by manufaturers to source materials
+            #supplierlist #suppliers</p>
+        <p><a href="https://www.indiamart.com">IndiaMART</a>
+            Indian suppliers directory helps find suppliers and also products from all states.</p>
+        <h2 id="interesting-github-repositories">Interesting Github Repositories</h2>
+        <p><a href="https://github.com/awesome-foss/awesome-sysadmin">Awesome Sysadmin</a>
+            Awesome Sysadmin tools</p>
+        <p><a href="https://github.com/topics/awesome">Awesome - Github topic</a>
+            The Github topic collecting all the awesome links pages at one place</p>
+        <p><a href="https://github.com/sindresorhus/awesome">Awesome Page Links</a>
+            Awesome Page Links to more Awesome Pages</p>
+        <p><a href="https://github.com/opentomb/OpenTomb">OpenTomb</a>
+            OpenTomb game engine for Tomb Raider 1-5</p>
+        <p><a href="https://github.com/mikeroyal/Photogrammetry-Guide">Photogrammetry Guide</a>
+            Collection of tutorials, applications, books etc. for photogrammetry.</p>
+        <h2 id="interesting-reads">Interesting Reads</h2>
+        <p><a href="https://www.cyberciti.biz/faq/linux-log-files-location-and-how-do-i-view-logs-files/">Linux log
+                files</a>
+            An article about linux log files.</p>
+        <p><a href="https://www.willowtreeapps.com/craft/an-introduction-to-language-lexing-and-parsing-with-antlr">Intro
+                to Language Lexing And Parsing with ANTLR</a>
+            It gives quick minimal intro to ANTLR grammar with example.</p>
+        <p><a href="https://tomassetti.me/antlr-mega-tutorial/">Antlr Mega Tutorial</a>
+            Antlr tutorial in full depth from beginning.</p>
+        <p><a href="https://makefiletutorial.com">Makefile Tutorial By Example</a>
+            Teaches making makefile from simple start. No prerequisite.</p>
+        <p><a href="https://devblogs.co/?dark=1">Devblogs</a>
+            Stream of engineering blogs from top companies aggregated at one place.</p>
+        <h2 id="security">Security:</h2>
+        <p><a href="https://breached.to/">Breached Forums</a>
+            Breached contains discussion related to breached sites and data to be sold from breaches sometimes.</p>
+        <p><a href="https://walletscrutiny.com">Wallet Scrutiny</a>
+            Contains list of bitcoin supporting wallets, examining the transparency and attacks on those wallets.</p>
+        <p><a href="https://kycnot.me">KYC? Not me!</a>
+            Lists the non kyc platforms for crypto with the privacy features. Rates them according to the privacy
+            features</p>
+        <p><a href="https://coveryourtracks.eff.org">Cover you track</a>
+            Tells if browser is being tracked and how good the tracking prevention is.</p>
+        <p><a href="mention.com">Mention</a>
+            Alerts when you are mentioned in any social media and hundreds of other sources</p>
+        <h2 id="productivity">Productivity</h2>
+        <p><a href="https://untools.co">Untools</a>
+            This is a site with collection of thinking and mental models.</p>
+        <h2 id="data-and-statistics">Data And Statistics:</h2>
+        <p><a href="www.statista.com">Statista</a>
+            Statistics about companies</p>
+        <p><a href="www.kaggle.com">Kaggle</a>
+            Data science related competitions and some data sets are present.</p>
+        <p><a href="https://www.crunchbase.com/">Crunchbase</a>
+            Data on companies are present with details of operation, people, funding and timelines.</p>
+        <p><a href="www.ukessays.com">UK Essays</a>
+            Essays on many subjects are presnt from various users.</p>
+        <p><a href="www.visualcapitalist.com">Visual Capitalist</a>
+            Presents economic data in visual format and new perspectives.</p>
+        <p><a href="https://www.oecd.org">OECD</a>
+            Organisation for Economic Co-operation and Development (OECD) dedicated to
+            economic and policy development.</p>
+        <h2 id="study-help">Study Help</h2>
+        <p><a href="https://cram.com">CRAM</a>
+            Falshcards to study</p>
+        <h2 id="video-effects-and-editing">Video Effects and Editing</h2>
+        <p><a href="https://kamua.com/">Kamua</a>
+            Automatically tracks and crops video to a size and much more.</p>
+        <h2 id="tools">Tools</h2>
+        <p><a href="https://etched.page/">etched</a>
+            Store site forever on bitcoin</p>
+        <p><a href="https://bottle.bitdb.network/">bottle bitdb</a>
+            A browser for bitcoin network stored data</p>
+        <p><a href="www.godbolt.org">Godbolt</a>
+            <a href="www.dogbolt.org">Dogbolt</a>
+            These are online compiler and decompiler explorer.
+        </p>
+        <p><a href="https://goodfirstissues.com">Good First Issues</a>
+            Lists repositories which have help wanted or good first issue tag in issues,
+            meaning beginner friendly issues.</p>
+        <p><a href="https://goodfirstissue.dev">Good first issues</a>
+            Same as above but different list and ui.</p>
+        <p><a href="www.firsttimersonly.com">First Timers</a>
+            A site aggregate links related toopen source contribution.</p>
+        <p><a href="https://switching.software">Switching.software</a>
+            A collection of tools which are alternative to the non privacy respecting tools.
+            Has tools sites and self hosting all linked inside.</p>
+        <p><a href="https://overturemaps.org/">Overture</a>
+            For developers to get accurate maps for gesospatial data.</p>
+        <p><a href="https://megalinter.io/latest/">Megalinter</a>
+            Linter for lota of languages and files. Looks promising.</p>
+        <h3 id="text-tools">Text Tools</h3>
+        <p><a href="https://hemingwayapp.com/">Hemingway</a>
+            An app that higlights the parts of text in passive or too dense to understand and so on.</p>
+        <h3 id="design-tools">Design Tools</h3>
+        <p><a href="https://wordmark.it/">Wordmark</a>
+            Displays a particular text in all the system fonts available.</p>
+        <p><a href="https://fontsinuse.com/">Fonts In Use</a>
+            Displays the fonts being used in a design.</p>
+        <h2 id="coordinates-of-cruptocurrency-world">Coordinates Of Cruptocurrency World</h2>
+        <h3 id="betting-in-crypto">Betting In Crypto</h3>
+        <p><a href="https://mainnet.dexsport.io/sports">Dexsport</a>
+            Decentralized betting site.</p>
+        <p><a href="https://bc.game/">BC.game</a>
+            Good betting site.</p>
+        <p><a href="https://www.betonline.ag/">Betonline</a></p>
+        <p><a href="https://bitcasino.io/">Bitcasino</a></p>
+        <h3 id="virtual-credit-cards-funded-by-crypto">Virtual Credit Cards Funded by Crypto</h3>
+        <p><a href="http://PayWithMoon.com">Pay with Moon</a>
+            Gives good payment with crypto to pre pay a visa card capable of USD payments</p>
+        <p><a href="http://TheBitcoinCompany.com">Bitcoin Company</a>
+            App centered. Allows creating prepaid virtual card which can be filled with crypto</p>
+        <p><a href="http://Ezzocard.com">Ezzocards</a>
+            Same as above</p>
+        <p><a href="https://bitpay.com/card/">Bitpay</a>
+            Same as above.</p>
+        <h3 id="defi">Defi</h3>
+        <p><a href="https://www.tokensets.com/">Token Sets</a>
+            Sets of token explorer which can be set of leveraged or defi pulse etc.</p>
+        <p><a href="https://furucombo.app/combo">Furucombo</a>
+            Create steps of actions to carry out using furucombo in one transaction without contracts.</p>
+        <h3 id="testnet-faucets">Testnet Faucets:</h3>
+        <p>Some faucets are listed in github repo of chains (https://github.com/ethereum-lists/chains.git).
+            Faucets also mentioned on Ethereum official websites (https://ethereum.org/en/developers/docs/networks/).
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Network</th>
+                    <th>Link</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Bitcoin</td>
+                    <td>https://bitcoinfaucet.uo1.net/</td>
+                </tr>
+                <tr>
+                    <td>Bitcoin</td>
+                    <td>https://coinfaucet.eu/en/btc-testnet/</td>
+                </tr>
+                <tr>
+                    <td>Bitcoin</td>
+                    <td>https://kuttler.eu/en/bitcoin/btc/faucet/</td>
+                </tr>
+                <tr>
+                    <td>Bitcoin Cash</td>
+                    <td>https://tbch.googol.cash/</td>
+                </tr>
+                <tr>
+                    <td>Bitcoin Cash 4</td>
+                    <td>https://tbch4.googol.cash/</td>
+                </tr>
+                <tr>
+                    <td>Ropsten</td>
+                    <td>https://faucet.egorfine.com/</td>
+                </tr>
+                <tr>
+                    <td>Ropsten</td>
+                    <td>https://faucet.dimensions.network</td>
+                </tr>
+                <tr>
+                    <td>Sepolia</td>
+                    <td>https://faucet.sepolia.dev/</td>
+                </tr>
+                <tr>
+                    <td>Goerli</td>
+                    <td>https://fauceth.komputing.org/?chain=5</td>
+                </tr>
+                <tr>
+                    <td>Goerli</td>
+                    <td>Links to faucets: https://goerli.net/</td>
+                </tr>
+                <tr>
+                    <td>All Testnets</td>
+                    <td>https://faucet.metamask.io/</td>
+                </tr>
+            </tbody>
+        </table>
+        <h1 id="books">Books</h1>
+        <ul>
+            <li><a href="https://github.com/MostlyAdequate/mostly-adequate-guide">Mostly Adeuqate Guide to Functional
+                    Programming</a></li>
+            <li><a href="https://www.goodreads.com/book/show/44936.Refactoring">Refactoring</a></li>
+            <li><a href="https://www.goodreads.com/en/book/show/44919.Working_Effectively_with_Legacy_Code">Working
+                    effectively with legacy code</a></li>
+            <li><a href="https://www.goodreads.com/book/show/1202.Freakonomics">Freakonomics</a></li>
+            <li><a href="https://dcic-world.org">A Data-Centric Introduction to Computing</a></li>
+        </ul>
+        <h1 id="disclaimer">Disclaimer</h1>
+        <p>All logos, brands &amp; tags are copyrights of respective sites or respective owners.</p>
+    </section>
+</body>
+
+</html>
