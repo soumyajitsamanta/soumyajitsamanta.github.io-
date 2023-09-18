@@ -6,173 +6,155 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookmarks</title>
-    <style>
-        :root {
-            --color-1: violet;
-            --color-2: blueviolet;
-            --color-3: white;
-        }
-
-        .bgr-c1-c2 {background-image: linear-gradient(var(--color-1), var(--color-2));}
-        .bgr-c1-c3 {background-image: linear-gradient(var(--color-1), var(--color-3));}
-        .bgr-c2-c1 {background-image: linear-gradient(var(--color-2), var(--color-1));}
-        .bgr-c2-c3 {background-image: linear-gradient(var(--color-2), var(--color-3));}
-        .bgr-c3-c1 {background-image: linear-gradient(var(--color-3), var(--color-1));}
-        .bgr-c3-c2 {background-image: linear-gradient(var(--color-3), var(--color-2));}
-
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            text-align: center;
-            font-size: xx-large;
-            height: 3em;
-            padding: 1em;
-            color: white;
-            /* text-shadow: 0 3px 6px black; */
-        }
-
-        .bg-color-1 {
-            background-color: var(--color-1);
-        }
-
-        .bg-color-2 {
-            background-color: var(--color-2);
-        }
-
-        .bg-color-3 {
-            background-color: var(--color-3);
-        }
-
-        header.main{
-            
-        }
-        header.main>h1 {
-            margin: 0;
-            height: 1em;
-            text-shadow: 0 3px 6px black;
-        }
-        section {
-            box-shadow: inset 0px 4px 10px black;
-            padding: 1em;
-        }
-        section:nth-of-type(1){
-            background-color: red;
-        }
-        section:nth-of-type(2){
-            background-color: blue;
-        }
-        section:nth-of-type(3){
-            background-color: black;
-        }
-        .wi-100pc {
-            width: 100%;
-        }
-
-        .ht-1em {
-            height: 1em;
-        }
-
-        .p-1em {
-            padding: 1em;
-        }
-
-        .p-t-1em {
-            padding-top: 1em;
-        }
-
-        .p-b-1em {
-            padding-bottom: 1em;
-        }
-
-        .bo-0 {
-            border: 0 solid;
-        }
-
-        .bo-2px {
-            border: 2px solid;
-        }
-
-        .bo-black {
-            border-color: black;
-        }
-
-        .bo-r-1em {
-            border-radius: 1em;
-        }
-
-        .m-1px {
-            margin: 1px;
-        }
-        .ta-centered{
-            text-align: center;
-        }
-        .f-s-xxl{
-            font-size: xx-large;
-        }
-        .sticky {
-            position: sticky;
-            top:0
-        }
-        .t-c-1 {
-            color: var(--color-1);
-        }
-        .t-c-2 {
-            color: var(--color-2);
-        }
-    </style>
+    <link rel="stylesheet" href="bookmark.css">
 </head>
 
 <body>
-    <header class="main bgr-c1-c2 bo-0">
-        <h1 id="about" class=" bo-0">Bookmarks</h1>
+    <header class="main-header">
+        <h1 id="about">Bookmarks</h1>
     </header>
-    <!-- <div class="wi-100pc ht-1em"></div> -->
-    <section class="p-1em toc">
-        <h1 class="ta-centered f-s-xxl sticky">Categories</h1>
-        <div class="m-1px bo-2px bo-black bo-r-1em p-t-1em p-b-1em bg-color-3">
-
+    <section>
+        <h1>Categories</h1>
+        <div>
             <ul>
-                <li><a href="#about">About</a></li>
                 <li><a href="#notes">Notes</a></li>
-                <li><a href="#links">Links</a>
-                    <ul>
-                        <li><a href="#games">Games</a></li>
-                        <li><a href="#hosting-services">Hosting Services</a></li>
-                        <li><a href="#decentralized-technologies">Decentralized Technologies:</a></li>
-                        <li><a href="#references-for-research-">References for Research 📚:</a></li>
-                        <li><a href="#interesting-github-repositories">Interesting Github Repositories</a></li>
-                        <li><a href="#interesting-reads">Interesting Reads</a></li>
-                        <li><a href="#security">Security:</a></li>
-                        <li><a href="#productivity">Productivity</a></li>
-                        <li><a href="#data-and-statistics">Data And Statistics:</a></li>
-                        <li><a href="#study-help">Study Help</a></li>
-                        <li><a href="#video-effects-and-editing">Video Effects and Editing</a></li>
-                        <li><a href="#tools">Tools</a>
-                            <ul>
-                                <li><a href="#text-tools">Text Tools</a></li>
-                                <li><a href="#design-tools">Design Tools</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#coordinates-of-cruptocurrency-world">Coordinates Of Cruptocurrency World</a>
-                            <ul>
-                                <li><a href="#betting-in-crypto">Betting In Crypto</a></li>
-                                <li><a href="#virtual-credit-cards-funded-by-crypto">Virtual Credit Cards Funded by
-                                        Crypto</a></li>
-                                <li><a href="#defi">Defi</a></li>
-                                <li><a href="#testnet-faucets">Testnet Faucets:</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+                <li><a href="#links">Links</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#hosting-services">Hosting Services</a></li>
+                <li><a href="#decentralized-technologies">Decentralized Technologies</a></li>
+                <li><a href="#references-for-research-">References for Research 📚</a></li>
+                <li><a href="#interesting-github-repositories">Interesting Github Repositories</a></li>
+                <li><a href="#interesting-reads">Interesting Reads</a></li>
+                <li><a href="#security">Security</a></li>
+                <li><a href="#productivity">Productivity</a></li>
+                <li><a href="#data-and-statistics">Data And Statistics</a></li>
+                <li><a href="#study-help">Study Help</a></li>
+                <li><a href="#video-effects-and-editing">Video Effects and Editing</a></li>
+                <li><a href="#tools">Tools</a></li>
+                <li><a href="#coordinates-of-cruptocurrency-world">Coordinates Of Cruptocurrency World</a></li>
                 <li><a href="#books">Books</a></li>
                 <li><a href="#disclaimer">Disclaimer</a></li>
             </ul>
         </div>
+        <div>
+            <div>
+
+                <ul>
+                    <li><a href="#notes">Notes</a></li>
+                    <li><a href="#links">Links</a></li>
+                    <li><a href="#games">Games</a></li>
+                    <li><a href="#hosting-services">Hosting Services</a></li>
+                    <li><a href="#decentralized-technologies">Decentralized Technologies</a></li>
+                    <li><a href="#references-for-research-">References for Research 📚</a></li>
+                    <li><a href="#interesting-github-repositories">Interesting Github Repositories</a></li>
+                    <li><a href="#interesting-reads">Interesting Reads</a></li>
+                    <li><a href="#security">Security</a></li>
+                </ul>
+                
+                <ul>
+                    <li><a href="#productivity">Productivity</a></li>
+                    <li><a href="#data-and-statistics">Data And Statistics</a></li>
+                    <li><a href="#study-help">Study Help</a></li>
+                    <li><a href="#video-effects-and-editing">Video Effects and Editing</a></li>
+                    <li><a href="#tools">Tools</a></li>
+                    <li><a href="#coordinates-of-cruptocurrency-world">Coordinates Of Cruptocurrency World</a></li>
+                </ul>
+                
+                <ul>
+                    
+                    <li><a href="#books">Books</a></li>
+                    <li><a href="#disclaimer">Disclaimer</a></li>
+                </ul>
+            </div>
+        </div>
+        <table>
+            <tbody>
+                <tr>
+                    <td>A</td>
+                    <td>A</td>
+                    <td>A</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="d-grid">
+            <a href="#notes">Notes</a>
+            <a href="#links">Links</a>
+            <a href="#games">Games</a>
+            <a href="#hosting-services">Hosting Services</a>
+            <a href="#decentralized-technologies">Decentralized Technologies</a>
+            <a href="#references-for-research-">References for Research 📚</a>
+            <a href="#interesting-github-repositories">Interesting Github Repositories</a>
+            <a href="#interesting-reads">Interesting Reads</a>
+            <a href="#security">Security</a>
+            <a href="#productivity">Productivity</a>
+            <a href="#data-and-statistics">Data And Statistics</a>
+            <a href="#study-help">Study Help</a>
+            <a href="#video-effects-and-editing">Video Effects and Editing</a>
+            <a href="#tools">Tools</a>
+            <a href="#coordinates-of-cruptocurrency-world">Coordinates Of Cruptocurrency World</a>
+            <a href="#books">Books</a>
+            <a href="#disclaimer">Disclaimer</a>
+        </div>
+        <div class="special-toc">
+            <div class="special-toc-column">
+                <span>A</span>
+                <ul>
+                    <li>A 1</li>
+                    <li>A 2</li>
+                    <li>A 3</li>
+                </ul>
+            </div>
+            <div class="special-toc-column">
+                <span>A</span>
+                <ul>
+                    <li>A 1</li>
+                    <li>A 2</li>
+                    <li>A 3</li>
+                </ul>
+            </div>
+            <div class="special-toc-column">
+                <span>A</span>
+                <ul>
+                    <li>A 1</li>
+                    <li>A 2</li>
+                    <li>A 3</li><li>A 1</li>
+                    <li>A 2</li>
+                    <li>A 3</li><li>A 1</li>
+                    <li>A 2</li>
+                    <li>A 3</li><li>A 1</li>
+                    <li>A 2</li>
+                    <li>A 3</li>
+                </ul>
+            </div>
+        </div>
+        <div>
+            <div>
+                <h2>A</h2>
+                <ul>
+                    <li>A 1</li>
+                    <li>A 2</li>
+                    <li>A 3</li>
+                </ul>
+            </div>
+            <div>
+                <h2>A</h2>
+                <ul>
+                    <li style="height: 32px;">A 1 <img width="64px" height="32px"> </li>
+                    <li>A 2</li>
+                    <li>A 3</li>
+                </ul>
+            </div>
+            <div>
+                <h2>A</h2>
+                <ul>
+                    <li>A 1</li>
+                    <li>A 2</li>
+                    <li>A 3</li>
+                </ul>
+            </div>
+        </div>
     </section>
-    <section class="bgr-c2-c1">
+    <section>
         <h1 id="notes">Notes</h1>
         <p>Icons can be added via following methods in order of preference:</p>
         <ul>

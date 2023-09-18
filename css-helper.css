@@ -1,0 +1,52 @@
+header h1 {
+    text-align: center;
+}
+
+.mr-r-auto {
+    margin-right: auto;
+}
+
+.mr-l-auto {
+    margin-left: auto;
+}
+
+.wi-400px {
+    width: 400px;
+}
+
+.ht-400px {
+    height: 400px;
+}
+
+.ht-40em {
+    height: 40em;
+}
+
+.b-2px {
+    border-width: 2px;
+}
+
+.b-ro-2px {
+    border-radius: 2px;
+}
+
+.b-ro-10px {
+    border-radius: 10px;
+}
+
+.gr-color-wheel {
+    background-image:
+    radial-gradient(white 10%, transparent 50%),
+    conic-gradient(red,
+     magenta,
+     blue,
+     cyan,
+     green,
+     yellow,
+     red)
+     ;
+}
+
+.t-a-c{
+    text-align: center;
+}

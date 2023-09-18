@@ -6,83 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Css Helping Utils</title>
-    <style>
-        header h1 {
-            text-align: center;
-        }
-
-        .mr-r-auto {
-            margin-right: auto;
-        }
-
-        .mr-l-auto {
-            margin-left: auto;
-        }
-
-        .wi-40em {
-            width: 40em;
-        }
-
-        .ht-10em {
-            height: 10em;
-        }
-
-        .ht-40em {
-            height: 40em;
-        }
-
-        .otln-1px {
-            outline-width: 1px;
-        }
-
-        .otln-blue {
-            outline-style: solid;
-            outline-color: blue;
-        }
-
-        .b-2px {
-            border-width: 2px;
-        }
-
-        .b-ro-2px {
-            border-radius: 2px;
-        }
-
-        .b-ro-10px {
-            border-radius: 10px;
-        }
-
-        .gr-color-wheel {
-            background-image:
-            radial-gradient(white 10%, transparent 50%),
-            conic-gradient(red,
-             magenta,
-             blue,
-             cyan,
-             green,
-             yellow,
-             red)
-             ;
-        }
-        .t-a-c{
-            text-align: center;
-        }
-    </style>
+    <link rel="stylesheet" href="css-helper.css">
 </head>
 
 <body>
     <header>
-        <h1>
-            CSS Helpers
-        </h1>
+        <h1>CSS Helpers</h1>
     </header>
     <section>
         <h1 class="t-a-c">Color Wheel</h1>
-        <div class="wi-40em ht-40em mr-l-auto mr-r-auto b-2px b-ro-10px gr-color-wheel"></div>
+        <div class="wi-400px ht-400px mr-l-auto mr-r-auto b-2px b-ro-10px gr-color-wheel"></div>
     </section>
     <section>
         <h1 class="t-a-c">Gradient Generator</h1>
-        <div></div>
+        <div id="gradient-generator"></div>
     </section>
 </body>
 

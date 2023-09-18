@@ -1,0 +1,196 @@
+:root {
+    --color-1: violet;
+    --color-2: blueviolet;
+    --color-3: white;
+}
+
+.bgr-c1-c2 {background-image: linear-gradient(var(--color-1), var(--color-2));}
+.bgr-c1-c3 {background-image: linear-gradient(var(--color-1), var(--color-3));}
+.bgr-c2-c1 {background-image: linear-gradient(var(--color-2), var(--color-1));}
+.bgr-c2-c3 {background-image: linear-gradient(var(--color-2), var(--color-3));}
+.bgr-c3-c1 {background-image: linear-gradient(var(--color-3), var(--color-1));}
+.bgr-c3-c2 {background-image: linear-gradient(var(--color-3), var(--color-2));}
+
+.bg-color-1 {background-color: var(--color-1);}
+.bg-color-2 {background-color: var(--color-2);}
+.bg-color-3 {background-color: var(--color-3);}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    font-size: xx-large;
+    height: 3em;
+    padding: 1em;
+    color: white;
+    /* text-shadow: 0 3px 6px black; */
+}
+
+header.main-header{
+    border-radius: 1em;
+    box-shadow: 0px 4px 10px black;
+    background-image: linear-gradient(var(--color-1), var(--color-2));
+    margin: .8em;
+    height: 2.5em;
+}
+
+header.main-header > h1 {
+    margin: 0;
+    padding: 0;
+    text-shadow: 0 3px 6px black;
+    background-image: none;
+    box-shadow: none;
+    font-size: 2em;
+    text-decoration: none;
+    color: #fff;
+    -webkit-text-stroke: unset;
+
+}
+
+h1 {
+    /* background-image: linear-gradient(var(--color-1), var(--color-2)); */
+    /* border-radius: 4px; */
+    /* box-shadow: 0px 2px 5px black; */
+    color: black;
+    font-size: xx-large;
+    /* margin: 0; */
+    text-align: center;
+    /* text-shadow: 0 2px 3px black; */
+    /* -webkit-text-stroke: 1px blueviolet; */
+}
+
+h2 {
+    /* background-image: linear-gradient(var(--color-1), var(--color-2)); */
+    /* border-radius: 4px; */
+    /* box-shadow: 0px 2px 5px black; */
+    /* color: white; */
+    /* text-shadow: 0 2px 3px black; */
+    font-size: x-large;
+}
+
+section {
+    padding: 1em 0;
+}
+section:nth-of-type(1) > div{
+    padding: 1em;
+}
+section:nth-of-type(1) > div > ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2px;
+    list-style: none;
+    padding-left: 0;
+}
+section:nth-of-type(1) > div > ul > li{
+    padding: 0 .5em;
+}
+section:nth-of-type(1) > div > ul > li > a {
+    color: black;
+    font-size: 1.2em;
+    text-decoration: none;
+    border: 2px solid transparent;
+}
+section:nth-of-type(1) > div > ul > li > a:hover{
+    text-decoration: underline solid;
+}
+
+section:nth-of-type(1) > div:nth-of-type(2) > div{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 1.5em;
+}
+
+section:nth-of-type(1) > table {
+    width: 100%;
+    text-align: center;
+}
+section:nth-of-type(1) > table  td {
+    border: 1px solid black;
+}
+/* section:nth-of-type(2){background-color: blue;} */
+/* section:nth-of-type(3){background-color: black;} */
+.special-toc {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2px;
+}
+.special-toc-column {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    outline: 1px solid red;
+}
+.special-toc-column span{
+    background-color: violet;
+    vertical-align: middle;
+}
+.special-toc-column *{
+    outline: 1px solid blue;
+}
+.d-grid {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr 5fr 1fr 5fr;
+}
+.wi-100pc {
+    width: 100%;
+}
+
+.ht-1em {
+    height: 1em;
+}
+
+.p-1em {
+    padding: 1em;
+}
+
+.p-t-1em {
+    padding-top: 1em;
+}
+
+.p-b-1em {
+    padding-bottom: 1em;
+}
+
+.bo-0 {
+    border: 0 solid;
+}
+
+.bo-2px {
+    border: 2px solid;
+}
+
+.bo-black {
+    border-color: black;
+}
+
+.bo-r-1em {
+    border-radius: 1em;
+}
+
+.m-1px {
+    margin: 1px;
+}
+.ta-centered{
+    text-align: center;
+}
+.f-s-xxl{
+    font-size: xx-large;
+}
+.sticky {
+    position: sticky;
+    top:0
+}
+.t-c-1 {
+    color: var(--color-1);
+}
+.t-c-2 {
+    color: var(--color-2);
+}
