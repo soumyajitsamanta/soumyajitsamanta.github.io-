@@ -147,3 +147,19 @@
 .bg-color-5 {
     background-color: var(--color-five);
 }
+
+.bg-color-transparent{
+    background-color: transparent;
+}
+
+.bo-2px{
+    border-width: 2px;
+}
+.bo-black{
+    border-style: solid;
+    border-color: black;
+}
+
+.flex-gap-1em{
+    gap:1em;
+}

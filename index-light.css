@@ -11,7 +11,7 @@ body {
     --color-two: hsl(0, 100%, 70%);
     --color-three: hsl(90, 100%, 70%);
     --color-four: hsl(220, 100%, 70%);
-    --color-five: green;
+    --color-five: hsl(120, 100%, 35%);
     --hue-primary: 220;
     --hue-five: 120;
 }
@@ -40,8 +40,9 @@ header.hero>.title {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: hsl(var(--hue-five), 60%, 40%);
-    padding: 10px;
+    background-color: transparent;
+    padding: 8px 12px;
+    border: 1px solid black;
     border-radius: 10px;
     min-width: 4.5em;
     height: 2em;
@@ -66,4 +67,15 @@ section#section-about {
 
 footer#page-footer {
     padding: 2px 1em;
+}
+
+.connect-box{
+    border-bottom: 2px solid black;
+    align-items: center;
+}
+
+.connect-box a{
+    color: black;
+    text-decoration: underline dashed;
+    text-decoration-color: black;
 }
