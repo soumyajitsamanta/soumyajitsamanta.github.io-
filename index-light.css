@@ -51,6 +51,12 @@ header.hero>.title {
     font-size: 1.2em;
 }
 
+.icon-nav > a:hover {
+    background-color: rgba(0, 0, 0, 0.176);
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+}
+
 section#section-projects {
     min-height: 4em;
     background-color: var(--color-one);
@@ -78,4 +84,8 @@ footer#page-footer {
     color: black;
     text-decoration: underline dashed;
     text-decoration-color: black;
+}
+
+.connect-box:hover a {
+    text-decoration: underline solid;
 }

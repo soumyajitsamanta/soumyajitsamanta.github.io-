@@ -18,6 +18,8 @@ As long as the number of links are small there will be a single table to take ca
   - [Study Help](#study-help)
   - [Video Effects and Editing](#video-effects-and-editing)
   - [Tools](#tools)
+    - [My Tools:](#my-tools)
+    - [Interesting Tools:](#interesting-tools)
     - [Text Tools](#text-tools)
     - [Design Tools](#design-tools)
   - [Coordinates Of Cruptocurrency World](#coordinates-of-cruptocurrency-world)
@@ -200,6 +202,21 @@ Automatically tracks and crops video to a size and much more.
 
 
 ## Tools
+
+### My Tools:
+
+[Reference-Creator](https://soumyajitsamanta.github.io/reference-creator)
+This was a test project to create site without using any framework and to use plain simple text style.
+Creates reference in APA 7 style from input from user. It has good alternatives like [MyBib](https://www.mybib.com/) and [Bibcitation](https://www.bibcitation.com/).
+
+[Css Helping Utils](https://soumyajitsamanta.github.io/css-helper)
+This will contain many tools to be used for css and related things.
+Has for now a color palette for reference.
+
+[Templates](https://soumyajitsamanta.github.io/templates)
+Contains templates to start projects, most useful if the  repository is 
+
+### Interesting Tools:
 
 [etched](https://etched.page/)
 Store site forever on bitcoin
