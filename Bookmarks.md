@@ -224,8 +224,8 @@ Store site forever on bitcoin
 [bottle bitdb](https://bottle.bitdb.network/)
 A browser for bitcoin network stored data
 
-[Godbolt](www.godbolt.org)
-[Dogbolt](www.dogbolt.org)
+[Godbolt](https://www.godbolt.org)
+[Dogbolt](https://www.dogbolt.org)
 These are online compiler and decompiler explorer.
 
 [Good First Issues](https://goodfirstissues.com)
