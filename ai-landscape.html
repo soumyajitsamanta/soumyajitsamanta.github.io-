@@ -7,66 +7,72 @@
     <title>AI Landscape Today</title>
   </head>
   <body>
-    <h1>AI Landscape Today:</h1>
+    <h1 class="text-center text-shadow">AI Landscape Today:</h1>
     <style>
-        /* Theme Grid Of Round Boxes */
-      /* body {
-        display: flex;
+      /* Theme Grid Of Round Boxes */
+      /* Tags */
+      body{
+        margin: 0;
+        padding: 0;
       }
+
+      /* Utilities */
+      .bg-gr-blueviolet{
+        color: white;
+        background-image: linear-gradient(hsl(271, 76%, 40%), blueviolet);
+      }
+      .bg-gr-lemon {
+        color: white;
+        background-image: linear-gradient(hsl(120, 100%, 20%), green);
+      }
+      .bg-gr-red {
+        color: white;
+        background-image: linear-gradient(hsl(0, 100%, 40%), red);
+      }
+      .text-center{
+        text-align: center;
+      }
+      .text-shadow {
+        text-shadow: 0 5px 3px gray;
+      }
+
+      /* Element Classes */
       .category {
         border: 1px solid black;
         border-color: black;
         border-radius: 10px;
+        margin: 10px;
         overflow: hidden;
-        margin: 4px;
-        max-width: 50%;
       }
       .category > header {
         display: block;
         text-align: center;
-        background-image: linear-gradient(hsl(271, 76%, 43%), blueviolet);
-        color: white;
         font-size: large;
-        text-shadow: 2px 2px 4px black;
-        padding: 4px;
+        padding: 5px;
+        text-shadow: 0 5px 3px black;
+        box-shadow: 0 0 5px 3px black;
+        margin-bottom: 10px;
       }
       .category > .content {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
-        padding: 4px;
+        padding: 5px;
       }
-      .category > .content > div {
-        max-width: 200px;
-        margin: 5px;
-        padding: 10px 5px;
-        border: 1px solid;
-        border-bottom: 1px solid black;
-        border-color: transparent;
-        border-radius: 4px;
+      
+      .category > .content > div{
+        padding: 10px;
+        border: 1px solid transparent;
+        border-radius: 5px;
       }
       .category > .content > div:hover {
         border-color: gray;
-      } */
-
-      /* Theme Flat */
-      body{
-        font-family: sans-serif;
-      }
-      .category{
-        display: flex;
-        flex-direction: column;
-        margin: 1em;
-      }
-      .category>.content {
-        margin: 1em;
       }
     </style>
     <div class="category">
-      <header>LLM Text Generator</header>
+      <header class="bg-gr-blueviolet">Text Generator</header>
       <div class="content">
-        <div>Mistral 7B</div>
         <div>GPT-2</div>
         <div>GPT-3</div>
         <div>GPT-4</div>
@@ -75,25 +81,19 @@
       </div>
     </div>
     <div class="category">
-      <header>Image Manipulators</header>
+      <header class="bg-gr-red">Mixture Of Experts</header>
+      <div class="content">
+        <div>Mistral 7B</div>
+        <div>Snowflake Arctic Instruct</div>
+        <div>Snowflake Arctic Base</div>
+      </div>
+    </div>
+    <div class="category">
+      <header class="bg-gr-lemon">Image Manipulators</header>
       <div class="content">
         <div>BRIA RMBG</div>
         <div>Stable Diffusion</div>
         <div>OpenAI DALL-E</div>
     </div>
-    <!-- <div class="category">
-      <header>Header</header>
-      <div class="content">
-        <div>A</div>
-        <div>B</div>
-      </div>
-    </div>
-    <div class="category">
-      <header>Header</header>
-      <div class="content">
-        <div>A</div>
-        <div>B</div>
-      </div>
-    </div> -->
   </body>
 </html>
