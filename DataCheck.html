@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Data Combination</title>
+    <style>
+      #app-root > a {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="title">Test Data Combination</h1>
+    <div id="app-root">
+      <a id="patanjali-json-link" href="https://www.patanjaliayurved.net/assets/utility/allproduct.json" type="application/json">Patanjali Json</a>
+      <a id="atlantic-rss-link" href="https://www.theatlantic.com/feed/all/" type="application/xml">Atlantic All</a>
+      <a id="remoteok-json-link" href="https://remoteok.com/json" type="application/json">Remote Ok Json</a>
+    </div>
+    <script lang="js">
+      var appRoot = document.querySelector("#app-root")
+      var todaysDate = new Date();
+      var todaysDateString = todaysDate.getFullYear()+"-"+(todaysDate.getMonth()+1)+"-"+todaysDate.getDate();
+      appRoot.querySelector("#patanjali-json-link").download=todaysDateString+".patanjali.json";
+      appRoot.querySelector("#atlantic-rss-link").download=todaysDateString+".theatlantic.rss";
+      appRoot.querySelector("#remoteok-json-link").download=todaysDateString+".remoteok.json";
+    </script>
+  </body>
+</html>
